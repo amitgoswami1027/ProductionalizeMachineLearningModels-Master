@@ -26,6 +26,15 @@ How to integrate the machine learning models to production ready code. !!
 * Embedded Methods, Wrapper methods and filter methods. Filter methods (simple staticical test) - this methods are build on the basis of the feature characteristics. It look into one feature at the time so not take care of overall redundancy. Wrapper methods evaluate all the possible feature comninations for the particular algorithms. Embedded method have flavor of both. 
 
 ### Machine Learning Pipeline : Model Building
+* Buidling Machine Learning models - Linear models, decision trees models or clustering models.
+* Evaluate the preformance about how the model is behaving. Eg: RSE, RMSE etc.
+* Meta Ensembling
+![image](https://user-images.githubusercontent.com/13011167/91420412-4df46700-e872-11ea-8501-0598139e72d8.png)
+
+## Machine Learning Model Building Pipeline : Data Analysis
+* Deploying the models does not just means, deploying the machine learning algorithms but we rather need to deploy the entire pipeline. 
+
+
 
 
 ## Important Links
