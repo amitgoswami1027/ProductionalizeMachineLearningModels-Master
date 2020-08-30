@@ -1,0 +1,13 @@
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      model-dir: path
+      train: path
+      test: path
+      hidden-units: str
+      steps: {type: int, default: 100}
+      batch-size: {type: int, default: 128}
+      label-col: str
+    command: "python main_dnn.py {model-dir} {train} {test} {hidden-units} {steps} {batch-size} {label-col}"

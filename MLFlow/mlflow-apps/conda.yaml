@@ -1,0 +1,13 @@
+name: main
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - pandas=0.22.0
+  - python==3.6
+  - scikit-learn==0.19.1
+  - pip:
+    - pyarrow
+    - mlflow
+    - xgboost==0.71
+    - tensorflow==1.8.0
