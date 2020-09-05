@@ -77,3 +77,6 @@ When we think about data science, we think about how to build machine learning m
 * Apache Kafka to Drive Machine Learning https://www.confluent.io/blog/using-apache-kafka-drive-cutting-edge-machine-learning/
 * Streaming Examples : https://github.com/kaiwaehner/kafka-streams-machine-learning-examples
 * Deep Learning Spark: https://towardsdatascience.com/deep-learning-with-apache-spark-part-1-6d397c16abd
+* MLFLOW : https://github.com/mlflow/mlflow
+* https://github.com/ddotabma/rendezvous-on-aws
+* https://github.com/SQLShark/MachineLearningFromModelToProduction
