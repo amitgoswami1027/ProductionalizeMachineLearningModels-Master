@@ -15,6 +15,8 @@ When we think about data science, we think about how to build machine learning m
 * UPLIFT IN Business Value: Model bring the actual business value.
 * MODEL DEPLOYMENT
 
+![image](https://user-images.githubusercontent.com/13011167/92307830-c071ef00-efb6-11ea-98d8-ce107a957ff0.png)
+
 ### Machine Learning Pipeline : Feature Engineerng
 * Missing Data: Missing values within the data.
 * Labels: Stings in the caterogical Variables. Values of the variables are string rather then numbers, we cannot use it in scikit libraries.
@@ -33,7 +35,6 @@ When we think about data science, we think about how to build machine learning m
 * Buidling Machine Learning models - Linear models, decision trees models or clustering models.
 * Evaluate the preformance about how the model is behaving. Eg: RSE, RMSE etc.
 * Meta Ensembling
-![image](https://user-images.githubusercontent.com/13011167/91420412-4df46700-e872-11ea-8501-0598139e72d8.png)
 
 ## Machine Learning Model Building Pipeline : Data Analysis
 * Deploying the models does not just means, deploying the machine learning algorithms but we rather need to deploy the entire pipeline. 
@@ -52,15 +53,11 @@ When we think about data science, we think about how to build machine learning m
 * Models errors are hard to detect with traditonal tests.
 * Separation of expertise.
 
-![image](https://user-images.githubusercontent.com/13011167/91439799-3d9cb600-e88b-11ea-994e-b181962c2913.png)
-
 ### DESIGN APPROACH TO ML SYSTEM ARCHITECTURE 
 * Train by batch, predict on fly and Serve Via REST API. (e.g Model train and presisted offline and loaded into webapp that give real time prediction about the price of the house when details about the given house is posted by client using the rest APIs. )
 * Train by batch, predict by batch and serve via database. (User might upload the CSV of the house with the input details and wait for 30 min telling them to check the email for details/results. This app will do the batch queue and will be stored in db for web app to share the results.)
 * Train and predict by streaming. (App would have access to the conver belt of updated data and models, it would be combination of the streaming framework such as spark stream with the data and updates models been feed from dedicated distributed queue such as apache kafka or aws kenisis. )
 * Train by batch and predict by mobile (on the client)
-
-![image](https://user-images.githubusercontent.com/13011167/91441372-b7ce3a00-e88d-11ea-84b5-3b5092c52c76.png)
 
 ![image](https://user-images.githubusercontent.com/13011167/91442017-d6810080-e88e-11ea-93d0-207064056f78.png)
 
@@ -69,6 +66,16 @@ When we think about data science, we think about how to build machine learning m
 
 
 
+
+Meta Ensembling
+
+![image](https://user-images.githubusercontent.com/13011167/91420412-4df46700-e872-11ea-8501-0598139e72d8.png)
+
+![image](https://user-images.githubusercontent.com/13011167/91441372-b7ce3a00-e88d-11ea-84b5-3b5092c52c76.png)
+
+Setup
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+https://pip.pypa.io/en/stable/installing/
 
 ## Important Links
 * https://towardsdatascience.com/rendezvous-architecture-for-data-science-in-production-79c4d48f12b
