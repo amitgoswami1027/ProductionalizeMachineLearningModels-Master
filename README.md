@@ -48,18 +48,34 @@ When we think about data science, we think about how to build machine learning m
 * Need for Reproduciability (Versioning Softwares).
 * Entanglement. (Changing anything changing everything principle)
 * Data Dependencies. (Most consequensial difference between traditional webapp and ML pipeline is the fact that primary inputs to the systems are not just code, while there are two equal consequensial inbound components i.e code+data. )
-* Configration issues.
+* Configration issues. 
 * Data and feature Engineering.
 * Models errors are hard to detect with traditonal tests.
 * Separation of expertise.
 
+![image](https://user-images.githubusercontent.com/13011167/92318504-f2bd3400-f02a-11ea-9812-9c6fe1ace649.png)
+
+### Principles of ML System Architecture
+* Reproduciability : Have the ability to replicate the given ML prediction.
+* Automation: Retain, update and deploy models as a part of automation pileline.
+* Extensibility: Have the ability to easily add and update the models.
+* Modulairty: Preprocessing feature engineering code used in training should be organized in the clear pipelines.
+* Scability: Ability to serve model predictions to large number of customers.
+* Testing: Test variations between models.
+
 ### DESIGN APPROACH TO ML SYSTEM ARCHITECTURE 
-* Train by batch, predict on fly and Serve Via REST API. (e.g Model train and presisted offline and loaded into webapp that give real time prediction about the price of the house when details about the given house is posted by client using the rest APIs. )
+* Train by batch, predict on fly and Serve Via REST API. (e.g Model train and presisted offline and loaded into webapp that give real time prediction about the price of the house when details about the given house is posted by client using the rest APIs.)
 * Train by batch, predict by batch and serve via database. (User might upload the CSV of the house with the input details and wait for 30 min telling them to check the email for details/results. This app will do the batch queue and will be stored in db for web app to share the results.)
 * Train and predict by streaming. (App would have access to the conver belt of updated data and models, it would be combination of the streaming framework such as spark stream with the data and updates models been feed from dedicated distributed queue such as apache kafka or aws kenisis. )
-* Train by batch and predict by mobile (on the client)
+* Train by batch and predict by mobile (on the client) : IOS App using the core ML Framework will not need to call the core backend framework for prediction, instead prediction will be made on the device. 
 
-![image](https://user-images.githubusercontent.com/13011167/91442017-d6810080-e88e-11ea-93d0-207064056f78.png)
+![image](https://user-images.githubusercontent.com/13011167/91441372-b7ce3a00-e88d-11ea-84b5-3b5092c52c76.png)
+
+
+
+
+## TRAIN BY BATCH and PREDICT ON FLY (STEPS TO AUTOMATE THE CI/CD ML PIPELINE)
+
 
 
 
@@ -71,8 +87,7 @@ Meta Ensembling
 
 ![image](https://user-images.githubusercontent.com/13011167/91420412-4df46700-e872-11ea-8501-0598139e72d8.png)
 
-![image](https://user-images.githubusercontent.com/13011167/91441372-b7ce3a00-e88d-11ea-84b5-3b5092c52c76.png)
-
+![image](https://user-images.githubusercontent.com/13011167/92318504-f2bd3400-f02a-11ea-9812-9c6fe1ace649.png)
 Setup
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 https://pip.pypa.io/en/stable/installing/
