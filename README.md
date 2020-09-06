@@ -135,3 +135,4 @@ To explain why, here’s a typical life cycle of a machine learning model:
 * MLFLOW : https://github.com/mlflow/mlflow
 * https://github.com/ddotabma/rendezvous-on-aws
 * https://github.com/SQLShark/MachineLearningFromModelToProduction
+* https://medium.com/syncedreview/google-ai-chief-jeff-deans-ml-system-architecture-blueprint-a358e53c68a5
