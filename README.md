@@ -71,6 +71,22 @@ When we think about data science, we think about how to build machine learning m
 
 ![image](https://user-images.githubusercontent.com/13011167/91441372-b7ce3a00-e88d-11ea-84b5-3b5092c52c76.png)
 
+### Why is Reproduciability in ML Architecture???
+Reproducibility is the ability to duplicate the ML Model exactly, such that the same raw data as input, both return the same result. We don't generally deploy ML algorithms but we deploy the entire ML pipeline. We need to make sure that every single step of the ML pipeline is reproduciable. Every Steps in ML Pipeline should be reproduciable.
+#### Reproducibility Data gathering
+* Problem : Data can be most difficult challange in the reproducibility.  e.g Databases can be constantly updated and overwritten, so values present at certain point may differ. Order of data during data loading is different,eg while retrieving the rows from SQL. 
+* Solution : Save the snapshot of the training data, either actual data or reference to it in the AWS.
+Desing the data source with the timestramps, so data at any point in time can be retrieved. (Ideal Solution)
+#### Reproducibility during Feature Creation
+* Problem: Replacing missing data with random values.Replacing the lables with the percentage of the data.Calculating the average values for replacing the missing values.
+* Solutions: Apply some coding best practices. Maintan in the version control and publish with auto-incremented or timestramp hashed versions.
+#### Reproducibility during Model building
+* Record the order with which you pass features to the model, For the models require randomness (decision tree, neural network) need to use the SEEDS. 
+#### Reproducibility during Model Deployment
+* Software version should match exactly.
+* Use container for trackng the verisons.
+* Research & deployment should be done in the same language. 
+
 
 
 
@@ -87,10 +103,27 @@ Meta Ensembling
 
 ![image](https://user-images.githubusercontent.com/13011167/91420412-4df46700-e872-11ea-8501-0598139e72d8.png)
 
-![image](https://user-images.githubusercontent.com/13011167/92318504-f2bd3400-f02a-11ea-9812-9c6fe1ace649.png)
+
 Setup
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 https://pip.pypa.io/en/stable/installing/
+
+MYBlog Material
+https://petewarden.com/2018/03/19/the-machine-learning-reproducibility-crisis/
+https://www.confluent.io/blog/build-deploy-scalable-machine-learning-production-apache-kafka/
+It’s hard to explain to people who haven’t worked with machine learning, but we’re still back in the dark ages when it comes to tracking changes and rebuilding models from scratch. It’s so bad it sometimes feels like stepping back in time to when we coded without source control.
+To explain why, here’s a typical life cycle of a machine learning model:
+* A researcher decides to try a new image classification architecture.
+* She copies and pastes some code from a previous project to handle the input of the dataset she’s using.
+* This dataset lives in one of her folders on the network. It’s probably one of the ImageNet downloads, but it isn’t clear which one. At some point, someone may have removed some of the images that aren’t actually JPEGs, or made other minor modifications, but there’s no history of that.
+* She tries out a lot of slightly different ideas, fixing bugs and tweaking the algorithms. These changes are happening on her local machine, and she may just do a mass file copy of the source code to her GPU cluster when she wants to kick off a full training run.
+* She executes a lot of different training runs, often changing the code on her local machine while jobs are in progress, since they take days or weeks to complete.
+* There might be a bug towards the end of the run on a large cluster that means she modifies the code in one file and copies that to all the machines, before resuming the job.
+* She may take the partially-trained weights from one run, and use them as the starting point for a new run with different code.
+* She keeps around the model weights and evaluation scores for all her runs, and picks which weights to release as the final model once she’s out of time to run more experiments. These weights can be from any of the runs, and may have been produced by very different code than what she currently has on her development machine.
+* She probably checks in her final code to source control, but in a personal folder.
+* She publishes her results, with code and the trained weights.
+
 
 ## Important Links
 * https://towardsdatascience.com/rendezvous-architecture-for-data-science-in-production-79c4d48f12b
