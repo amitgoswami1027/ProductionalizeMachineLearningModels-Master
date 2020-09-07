@@ -137,3 +137,4 @@ To explain why, here’s a typical life cycle of a machine learning model:
 * https://github.com/ddotabma/rendezvous-on-aws
 * https://github.com/SQLShark/MachineLearningFromModelToProduction
 * https://medium.com/syncedreview/google-ai-chief-jeff-deans-ml-system-architecture-blueprint-a358e53c68a5
+* https://christophergs.com/machine%20learning/2019/03/17/how-to-deploy-machine-learning-models/
