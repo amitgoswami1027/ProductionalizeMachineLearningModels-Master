@@ -87,7 +87,8 @@ Desing the data source with the timestramps, so data at any point in time can be
 * Use container for trackng the verisons.
 * Research & deployment should be done in the same language. 
 
-
+## PYTHON ENVIRONMENT SETUP ON MAC
+### Install Python : 
 
 
 ## TRAIN BY BATCH and PREDICT ON FLY (STEPS TO AUTOMATE THE CI/CD ML PIPELINE)
