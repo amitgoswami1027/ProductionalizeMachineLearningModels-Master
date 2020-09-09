@@ -1,6 +1,6 @@
 # ML Model Building and Deployment
-
-## Environment-Setup Virtual Box
+## Installation and Configration
+### Environment-Setup Virtual Box
 * Download & Install virtual Box from given link based upon your operating system. [https://www.virtualbox.org/wiki/Downloads]
 * After installation of virtual box, download ubuntu image or any Linux flavor. For ubuntu click to: [https://ubuntu.com/download/desktop/thankyou?version=18.04.3&architecture=amd64]
 * Click New -> <Give Name to OS> like Linux -> <Give Memory size or set it default to 1 GB> -> Click Create -> Next -> Next -> Give the file storage size set it to at least 20 GB -> click Create .
@@ -20,7 +20,7 @@ sudo apt install openssh-server
 * Above command is for connection with ssh to your local system via putty, cmd or powershell.
 * Now install and open putty and type your ubuntu username and password. You will be connected to you VM. 
 
-## Environment-Setup Docker
+### Environment-Setup Docker
 To install docker connect you system to internet. And on terminal give these commands:
 * Step-01 : Update the apt package index: [sudo apt-get update]
 * Step-02 : Install packages to allow apt to use a repository over HTTPS:
@@ -47,7 +47,7 @@ stable"
 * Step-07 : Install the latest version of Docker Engine – Community [sudo apt-get install docker-ce docker-ce-cli containerd.io]
 * Step-08 : To check the installation is successful run [sudo docker run hello-world]
 
-## Environment-Setup Jenkins [How to install Jenkins on Ubuntu 18.04]
+### Environment-Setup Jenkins [How to install Jenkins on Ubuntu 18.04]
 Jenkins is an open source Continuous Integration server capable of orchestrating a chain of actions that help to achieve the Continuous Integration process (and not only) in an automated fashion. Jenkins is free and is entirely written in Java. Jenkins is a widely used application around the world that has around 300k installations and growing
 day by day.It is a server-based application and requires a web server like Apache Tomcat. The reason Jenkins became so popular is that of its monitoring of repeated tasks which arise during the development of a project. For example, if your team is developing a project, Jenkins will continuously test your project builds and show you the errors in early stages of your development.By using Jenkins, software companies can accelerate their software development process, as Jenkins can automate build and test at a rapid rate.
 Jenkins supports the complete development lifecycle of software from building,testing, documenting the software, deploying and other stages of a software development lifecycle.
@@ -64,7 +64,7 @@ Jenkins supports the complete development lifecycle of software from building,te
 * Jenkins is now installed and ready to use. [http://localhost:8080 or http://[VM_IP]:8080]
 * https://www.serverlab.ca/tutorials/linux/administration-linux/how-to-install-jenkins-on-ubuntu-18-04-bionic-beaver/
 
-## Environment-Setup GitHub
+### Environment-Setup GitHub
 To install GitLab open your Virtual box and your ubuntu VM. Connect it with you putty or you can run it on your ubuntu terminal as well.
 GitLab is a web-based DevOps lifecycle tool that provides a Gitrepository manager providing wiki, issue-tracking and CI/CD pipeline features, using an open-source license, developed by GitLab Inc. The software was created by Ukrainians Dmitriy Zaporozhets and Valery Sizov, and is used by several large tech companies. Gitlab is a service that provides remote access to Git repositories. In addition to hosting your code, the services provide additional features designed to help manage the software development lifecycle. These additional features include managing the sharing of code between different people, bug tracking, wiki space and other tools for 'social coding'. 
 * First pull the docker image, run-> [sudo docker pull gitlab/gitlab-ce] 
@@ -72,7 +72,7 @@ GitLab is a web-based DevOps lifecycle tool that provides a Gitrepository manage
 * After successfully pulling image run-> [sudo docker run -d -p 443:443 -p 22:22 -p 80:80 --name Gitlab <Image name: tag or ImageID>]
   [sudo docker run -d -p 445:443 -p 2200:22 -p 90:80 --name Gitlab 0c78ed7cea0a]
 
-## FLASK
+### FLASK
 Flask:Flask is a popular Python web framework, meaning it is a third-party Python library used for developing web applications. It is classified as a microframework because it does not require particular toolsor libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions.However, Flask supports extensions that can add application features as if they were implemented in Flask itself. Extensions exist for object-relational mappers,form validation, upload handling, various open authentication technologies andseveral common framework related tools. Extensions are updated far more frequently than the core Flask program. 
 
 
