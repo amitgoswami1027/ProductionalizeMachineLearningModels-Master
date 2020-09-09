@@ -75,6 +75,15 @@ GitLab is a web-based DevOps lifecycle tool that provides a Gitrepository manage
 ### FLASK
 Flask:Flask is a popular Python web framework, meaning it is a third-party Python library used for developing web applications. It is classified as a microframework because it does not require particular toolsor libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions.However, Flask supports extensions that can add application features as if they were implemented in Flask itself. Extensions exist for object-relational mappers,form validation, upload handling, various open authentication technologies andseveral common framework related tools. Extensions are updated far more frequently than the core Flask program. 
 
+## Natural Language Processing Programming
+
+## Flask NLP Model
+
+## Docker & DockerFile
+
+## CICD Pipeline and Jenkins Configration
+
+
 
 ## Important Links
 * https://towardsdatascience.com/rendezvous-architecture-for-data-science-in-production-79c4d48f12b
