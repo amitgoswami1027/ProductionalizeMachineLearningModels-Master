@@ -1,129 +1,79 @@
-# Productization of Machine Learning Models
-How to integrate the machine learning models to production ready code. !!
+# ML Model Building and Deployment
 
-Deployment of machine learning models, or simply, putting models into production, means making your models available to your other business systems. By deploying models, other systems can send data to them and get their predictions, which are in turn populated back into the company systems. Through machine learning model deployment, you and your business can begin to take full advantage of the model you built.
+## Environment-Setup Virtual Box
+* Download & Install virtual Box from given link based upon your operating system. [https://www.virtualbox.org/wiki/Downloads]
+* After installation of virtual box, download ubuntu image or any Linux flavor. For ubuntu click to: [https://ubuntu.com/download/desktop/thankyou?version=18.04.3&architecture=amd64]
+* Click New -> <Give Name to OS> like Linux -> <Give Memory size or set it default to 1 GB> -> Click Create -> Next -> Next -> Give the file storage size set it to at least 20 GB -> click Create .
+* Locate the .iso image you saved and go to network and select drop down Attached to with bridge adapter and name to your wireless adapter (choose the wifi connector).
+* And now click OK and start your Virtual machine click Install ubuntu -> follow the procedure of installation. Make everything default if it’s your first installation and new to every setting and click next while installing because this is VM and our host OS would remain unaffected.
+* Connect your system to internet and start your ubuntu VM.
+* After successfully installation open ubuntu VM and open terminal. [ Type -> ifconfig ] If it doesn’t run the you have to fire these commands and check [ifconfig] again:
+```
+sudo apt-get update
+sudo apt install net-tools
+```
+* Check whether first two address of IP address of your host and vm is same or not e.g 192.148.xx.xx. If not run the following command and restart the VM
+```
+sudo apt update
+sudo apt install openssh-server
+```
+* Above command is for connection with ssh to your local system via putty, cmd or powershell.
+* Now install and open putty and type your ubuntu username and password. You will be connected to you VM. 
 
-When we think about data science, we think about how to build machine learning models, we think about which algorithm will be more predictive, how to engineer our features and which variables to use to make the models more accurate. However, how we are going to actually use those models is often neglected. And yet this is the most important step in the machine learning pipeline. Only when a model is fully integrated with the business systems, we can extract real value from its predictions.
+## Environment-Setup Docker
+To install docker connect you system to internet. And on terminal give these commands:
+* Step-01 : Update the apt package index: [sudo apt-get update]
+* Step-02 : Install packages to allow apt to use a repository over HTTPS:
+```
+  sudo apt-get install \
+       apt-transport-https \
+       ca-certificates \
+       curl \
+       gnupg-agent \
+       software-properties-common
+```
+* Step-03 : Add Docker’s official GPG key: [curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -]
+* Step-04 : Verify that you now have the key with the fingerprint 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C0EBF CD88, by searching for the last 8 characters of the fingerprint.
+  [sudo apt-key fingerprint 0EBFCD88]
+* Step-05 : Use the following command to set up the stable repository.
+```
+sudo add-apt-repository \
+"deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) \
+stable"
 
-## Machine Learning Model Deployment
-### Machine Learning Pipeline
-* DATA Gathering. 
-* DATA Analysis : What variables we can use and what variables we cannot use.
-* DATA PRE-PROCESSING: During feature engineering, we transform the variable to make them useful in the machine learning models, filling missing values etc.
-* FEATURE Selection: Why we need to select feature in first place? Feature selections means finding those variables which are most predictive one and building the models around those variables.
-* MODEL BUILDING: Typically build various ML algos and choose the ones which give the best results. 
-* UPLIFT IN Business Value: Model bring the actual business value.
-* MODEL DEPLOYMENT
+```
+* Step-06 : Update again [sudo apt-get update]
+* Step-07 : Install the latest version of Docker Engine – Community [sudo apt-get install docker-ce docker-ce-cli containerd.io]
+* Step-08 : To check the installation is successful run [sudo docker run hello-world]
 
-![image](https://user-images.githubusercontent.com/13011167/92307830-c071ef00-efb6-11ea-98d8-ce107a957ff0.png)
+## Environment-Setup Jenkins [How to install Jenkins on Ubuntu 18.04]
+Jenkins is an open source Continuous Integration server capable of orchestrating a chain of actions that help to achieve the Continuous Integration process (and not only) in an automated fashion. Jenkins is free and is entirely written in Java. Jenkins is a widely used application around the world that has around 300k installations and growing
+day by day.It is a server-based application and requires a web server like Apache Tomcat. The reason Jenkins became so popular is that of its monitoring of repeated tasks which arise during the development of a project. For example, if your team is developing a project, Jenkins will continuously test your project builds and show you the errors in early stages of your development.By using Jenkins, software companies can accelerate their software development process, as Jenkins can automate build and test at a rapid rate.
+Jenkins supports the complete development lifecycle of software from building,testing, documenting the software, deploying and other stages of a software development lifecycle.
+* Install Java [https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04#installing-specific-versions-of-openjdk]
+* sudo add-apt-repository ppa:webupd8team/java
+#### Add the Jenkins Repository
+* Add the signing key for Jenkins Repository [wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -]
+* To install stable releases of Jenkins, run the following command to add the stable repository. [sudo apt-add-repository "deb https://pkg.jenkins.io/debian-stable binary/"]
+* To install the most recent releases, add the following repository instead. [sudo apt-add-repository "deb http://pkg.jenkins-ci.org/debian binary/"]
+#### Install and Configure Jenkins
+* Install Jenkins [sudo apt install jenkins]
+* Get the root password automatically generated during the installation. [sudo cat /var/lib/jenkins/secrets/initialAdminPassword]
+* When installed, open a web browser and navigate to your server using port 8080. Enter the root password in the input field.
+* Jenkins is now installed and ready to use. [http://localhost:8080 or http://[VM_IP]:8080]
+* https://www.serverlab.ca/tutorials/linux/administration-linux/how-to-install-jenkins-on-ubuntu-18-04-bionic-beaver/
 
-### Machine Learning Pipeline : Feature Engineerng
-* Missing Data: Missing values within the data.
-* Labels: Stings in the caterogical Variables. Values of the variables are string rather then numbers, we cannot use it in scikit libraries.
-* Distribution of Variables: Gauession Distribution or skewed.
-* Outliers.
+## Environment-Setup GitHub
+To install GitLab open your Virtual box and your ubuntu VM. Connect it with you putty or you can run it on your ubuntu terminal as well.
+GitLab is a web-based DevOps lifecycle tool that provides a Gitrepository manager providing wiki, issue-tracking and CI/CD pipeline features, using an open-source license, developed by GitLab Inc. The software was created by Ukrainians Dmitriy Zaporozhets and Valery Sizov, and is used by several large tech companies. Gitlab is a service that provides remote access to Git repositories. In addition to hosting your code, the services provide additional features designed to help manage the software development lifecycle. These additional features include managing the sharing of code between different people, bug tracking, wiki space and other tools for 'social coding'. 
+* First pull the docker image, run-> [sudo docker pull gitlab/gitlab-ce] 
+* Make sure you have at least 2 GB of data because Gitlab will be much heavy image to pull. 
+* After successfully pulling image run-> [sudo docker run -d -p 443:443 -p 22:22 -p 80:80 --name Gitlab <Image name: tag or ImageID>]
+  [sudo docker run -d -p 445:443 -p 2200:22 -p 90:80 --name Gitlab 0c78ed7cea0a]
 
-### Machine Learning Pipeline : Feature Selection
-* Allows to find best subset of feature which will allows most predictive features. 
-* Simple models are easier to predict and esier to train.
-* Enhance generalization by reducing overfitting.
-* Utilizing the less number of features reduces the risk of data errors in the models. Data is redundent means many features provide the same informaiton then why should we use more number of the features.
-* Less variables we use, we need to write less code for engineering the models and productizing it.
-* Embedded Methods, Wrapper methods and filter methods. Filter methods (simple staticical test) - this methods are build on the basis of the feature characteristics. It look into one feature at the time so not take care of overall redundancy. Wrapper methods evaluate all the possible feature comninations for the particular algorithms. Embedded method have flavor of both. 
-
-### Machine Learning Pipeline : Model Building
-* Buidling Machine Learning models - Linear models, decision trees models or clustering models.
-* Evaluate the preformance about how the model is behaving. Eg: RSE, RMSE etc.
-* Meta Ensembling
-
-## Machine Learning Model Building Pipeline : Data Analysis
-* Deploying the models does not just means, deploying the machine learning algorithms but we rather need to deploy the entire pipeline. 
-
-# MACHINE LEARNING SYSTEM ARCHITECTURE
-* Machine Learning in production required different componenets - Infrastructure, Applications, Data, Documentation and configrations.
-* Architecture is how these system intracts with each other to form a system.
-* Developing & deploying ML systemsis relatively fast and cheap but maintaining them effectively over a preiod of time is difficult. Clarity in planning and architecture design is very important. ML system require close co-operations between data science, engineering, devops and business, so and shared understanding of the system helps in better co-operation.
-
-### Challanges and Key Principles of the ML Systems
-* Need for Reproduciability (Versioning Softwares).
-* Entanglement. (Changing anything changing everything principle)
-* Data Dependencies. (Most consequensial difference between traditional webapp and ML pipeline is the fact that primary inputs to the systems are not just code, while there are two equal consequensial inbound components i.e code+data. )
-* Configration issues. 
-* Data and feature Engineering.
-* Models errors are hard to detect with traditonal tests.
-* Separation of expertise.
-
-![image](https://user-images.githubusercontent.com/13011167/92318504-f2bd3400-f02a-11ea-9812-9c6fe1ace649.png)
-
-### Principles of ML System Architecture
-* Reproduciability : Have the ability to replicate the given ML prediction.
-* Automation: Retain, update and deploy models as a part of automation pileline.
-* Extensibility: Have the ability to easily add and update the models.
-* Modulairty: Preprocessing feature engineering code used in training should be organized in the clear pipelines.
-* Scability: Ability to serve model predictions to large number of customers.
-* Testing: Test variations between models.
-
-### DESIGN APPROACH TO ML SYSTEM ARCHITECTURE 
-* Train by batch, predict on fly and Serve Via REST API. (e.g Model train and presisted offline and loaded into webapp that give real time prediction about the price of the house when details about the given house is posted by client using the rest APIs.)
-* Train by batch, predict by batch and serve via database. (User might upload the CSV of the house with the input details and wait for 30 min telling them to check the email for details/results. This app will do the batch queue and will be stored in db for web app to share the results.)
-* Train and predict by streaming. (App would have access to the conver belt of updated data and models, it would be combination of the streaming framework such as spark stream with the data and updates models been feed from dedicated distributed queue such as apache kafka or aws kenisis. )
-* Train by batch and predict by mobile (on the client) : IOS App using the core ML Framework will not need to call the core backend framework for prediction, instead prediction will be made on the device. 
-
-![image](https://user-images.githubusercontent.com/13011167/91441372-b7ce3a00-e88d-11ea-84b5-3b5092c52c76.png)
-
-### Why is Reproduciability in ML Architecture???
-Reproducibility is the ability to duplicate the ML Model exactly, such that the same raw data as input, both return the same result. We don't generally deploy ML algorithms but we deploy the entire ML pipeline. We need to make sure that every single step of the ML pipeline is reproduciable. Every Steps in ML Pipeline should be reproduciable.
-#### Reproducibility Data gathering
-* Problem : Data can be most difficult challange in the reproducibility.  e.g Databases can be constantly updated and overwritten, so values present at certain point may differ. Order of data during data loading is different,eg while retrieving the rows from SQL. 
-* Solution : Save the snapshot of the training data, either actual data or reference to it in the AWS.
-Desing the data source with the timestramps, so data at any point in time can be retrieved. (Ideal Solution)
-#### Reproducibility during Feature Creation
-* Problem: Replacing missing data with random values.Replacing the lables with the percentage of the data.Calculating the average values for replacing the missing values.
-* Solutions: Apply some coding best practices. Maintan in the version control and publish with auto-incremented or timestramp hashed versions.
-#### Reproducibility during Model building
-* Record the order with which you pass features to the model, For the models require randomness (decision tree, neural network) need to use the SEEDS. 
-#### Reproducibility during Model Deployment
-* Software version should match exactly.
-* Use container for trackng the verisons.
-* Research & deployment should be done in the same language. 
-
-## PYTHON ENVIRONMENT SETUP ON MAC
-### Install Python : 
-
-
-## TRAIN BY BATCH and PREDICT ON FLY (STEPS TO AUTOMATE THE CI/CD ML PIPELINE)
-
-
-
-
-
-
-
-
-Meta Ensembling
-
-![image](https://user-images.githubusercontent.com/13011167/91420412-4df46700-e872-11ea-8501-0598139e72d8.png)
-
-
-Setup
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-https://pip.pypa.io/en/stable/installing/
-
-MYBlog Material
-https://petewarden.com/2018/03/19/the-machine-learning-reproducibility-crisis/
-https://www.confluent.io/blog/build-deploy-scalable-machine-learning-production-apache-kafka/
-It’s hard to explain to people who haven’t worked with machine learning, but we’re still back in the dark ages when it comes to tracking changes and rebuilding models from scratch. It’s so bad it sometimes feels like stepping back in time to when we coded without source control.
-To explain why, here’s a typical life cycle of a machine learning model:
-* A researcher decides to try a new image classification architecture.
-* She copies and pastes some code from a previous project to handle the input of the dataset she’s using.
-* This dataset lives in one of her folders on the network. It’s probably one of the ImageNet downloads, but it isn’t clear which one. At some point, someone may have removed some of the images that aren’t actually JPEGs, or made other minor modifications, but there’s no history of that.
-* She tries out a lot of slightly different ideas, fixing bugs and tweaking the algorithms. These changes are happening on her local machine, and she may just do a mass file copy of the source code to her GPU cluster when she wants to kick off a full training run.
-* She executes a lot of different training runs, often changing the code on her local machine while jobs are in progress, since they take days or weeks to complete.
-* There might be a bug towards the end of the run on a large cluster that means she modifies the code in one file and copies that to all the machines, before resuming the job.
-* She may take the partially-trained weights from one run, and use them as the starting point for a new run with different code.
-* She keeps around the model weights and evaluation scores for all her runs, and picks which weights to release as the final model once she’s out of time to run more experiments. These weights can be from any of the runs, and may have been produced by very different code than what she currently has on her development machine.
-* She probably checks in her final code to source control, but in a personal folder.
-* She publishes her results, with code and the trained weights.
+## FLASK
+Flask:Flask is a popular Python web framework, meaning it is a third-party Python library used for developing web applications. It is classified as a microframework because it does not require particular toolsor libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions.However, Flask supports extensions that can add application features as if they were implemented in Flask itself. Extensions exist for object-relational mappers,form validation, upload handling, various open authentication technologies andseveral common framework related tools. Extensions are updated far more frequently than the core Flask program. 
 
 
 ## Important Links
