@@ -49,6 +49,38 @@ In the example training code, after training the linear regression model, a func
 
 # MLflow: Managing the Machine Learning Lifecycle 
 
+## Experiment Tracking with MLFlow
+Over the course of the machine learning life cycle, data scientists test many different models from various libraries with different hyperparameters. Tracking these various results poses an organizational challenge. In brief, storing experiments, results, models, supplementary artifacts, and code creates significant challenges.
+
+MLflow Tracking is one of the three main components of MLflow. It is a logging API specific for machine learning and agnostic to libraries and environments that do the training. It is organized around the concept of runs, which are executions of data science code. Runs are aggregated into experiments where many runs can be a part of a given experiment and an MLflow server can host many experiments.
+
+Each run can record the following information:
+
+    Parameters: Key-value pairs of input parameters such as the number of trees in a random forest model
+    Metrics: Evaluation metrics such as RMSE or Area Under the ROC Curve
+    Artifacts: Arbitrary output files in any format. This can include images, pickled models, and data files
+    Source: The code that originally ran the experiment
+
+MLflow tracking also serves as a model registry so tracked models can easily be stored and, as necessary, deployed into production.
+
+Experiments can be tracked using libraries in Python, R, and Java as well as by using the CLI and REST calls. This course will use Python, though the majority of MLflow functionality is also exposed in these other APIs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   ### Important Links
   * Getting started with mlFlow : https://towardsdatascience.com/getting-started-with-mlflow-52eff8c09c61
