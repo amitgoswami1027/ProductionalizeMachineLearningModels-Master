@@ -11,7 +11,9 @@ MLflow designed to take care about the following :
   
   ![image](https://user-images.githubusercontent.com/13011167/91650638-a9f00300-ea9f-11ea-8218-e68cb5de129b.png)
   
-  ## Getting Started with MLflow
+  ## GETTING STARTED WITH MLFLOW 
+  
+  ### ENVIRONMENT_SETUP for MLFLOW:
   * Step-01 : Install Python. Download the appropiate version from [https://www.python.org/downloads/windows/]. Once Downloaded, run the installer.Make sure you select the Install launcher for all users and Add Python 3.7 to PATH checkboxes. Click Install Now. Verify python is installed by typing ["python" on the command prompt].
   * Step-02 : Install virtualnv. Why? Python software packages are installed system-wide by default. Consequently, whenever a single project-specific package is changed, it changes for all your Python projects. You would want to avoid this, and having separate virtual environments for each project is the easiest solution. [pip install virtualenv].
   * Step-03 : Install MLFlow [pip install mlflow] . Install scikit-learn [pip install scikit-learn].
@@ -30,11 +32,21 @@ pip install scikit-learn
 pip install mlflow
 
 pip install -U scikit-learn scipy matplotlib
+MACOS
+[Installing Python]
+Homebrew Install : /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install python@3.8
+python -m pip3 install -U pip3
+pip3 install scikit-learn
+
+[Installing Conda] - [bash ~/miniconda.sh -b -p $HOME/miniconda]
+brew install wget
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
+bash ~/miniconda.sh -b -p $HOME/miniconda
+
 ```
-  
-  [pip install mlflow]
-  [ERRORS]
-  * ModuleNotFoundError: No module named 'sklearn.utils' [pip3 install -U scikit-learn scipy matplotlib]
+### TRANING THE ML MODEL WITH MLFLOW
+
   
   ## Packaging Training Code in a Conda Environment
   You do this by using MLflow Projects conventions to specify the dependencies and entry points to your code. The sklearn_elasticnet_wine/MLproject file specifies that the project has the dependencies located in a Conda environment file called conda.yaml and has one entry point that takes two parameters: alpha and l1_ratio.
@@ -64,16 +76,6 @@ Each run can record the following information:
 MLflow tracking also serves as a model registry so tracked models can easily be stored and, as necessary, deployed into production.
 
 Experiments can be tracked using libraries in Python, R, and Java as well as by using the CLI and REST calls. This course will use Python, though the majority of MLflow functionality is also exposed in these other APIs.
-
-
-
-
-
-
-
-
-
-
 
 
 
