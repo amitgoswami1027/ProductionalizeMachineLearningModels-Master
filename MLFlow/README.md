@@ -24,25 +24,25 @@ MLflow designed to take care about the following :
   * Step-08 : Comparing the Models: Next, use the MLflow UI to compare the models that you have produced. In the same current working directory as the one that contains the mlruns run [mlflow ui] http://localhost:5000
 
 ```
-Command Handy for you during setup the environment:
-Install PIP Windows [python -m pip install -U pip]
-Install PIP MAC [pip install -U pip]
-pip install virtualenv
-pip install scikit-learn
-pip install mlflow
+      Command Handy for you during setup the environment:
+      Install PIP Windows [python -m pip install -U pip]
+      Install PIP MAC [pip install -U pip]
+      pip install virtualenv
+      pip install scikit-learn
+      pip install mlflow
 
-pip install -U scikit-learn scipy matplotlib
-MACOS
-[Installing Python]
-Homebrew Install : /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install python@3.8
-python -m pip3 install -U pip3
-pip3 install scikit-learn
+      pip install -U scikit-learn scipy matplotlib
+      MACOS
+      [Installing Python]
+      Homebrew Install : /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+      brew install python@3.8
+      python -m pip3 install -U pip3
+      pip3 install scikit-learn
 
-[Installing Conda] - [bash ~/miniconda.sh -b -p $HOME/miniconda]
-brew install wget
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
-bash ~/miniconda.sh -b -p $HOME/miniconda
+      [Installing Conda] - [bash ~/miniconda.sh -b -p $HOME/miniconda]
+      brew install wget
+      wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
+      bash ~/miniconda.sh -b -p $HOME/miniconda
 
 ```
 ### TRANING THE ML MODEL WITH MLFLOW
