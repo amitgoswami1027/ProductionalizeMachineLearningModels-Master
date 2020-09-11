@@ -10,8 +10,26 @@ MLflow designed to take care about the following :
   workflow steps and models across organizations if you wish to open source your code.
   
   ![image](https://user-images.githubusercontent.com/13011167/91650638-a9f00300-ea9f-11ea-8218-e68cb5de129b.png)
-  
-  ## GETTING STARTED WITH MLFLOW 
+
+
+## Experiment Tracking with MLFlow
+Over the course of the machine learning life cycle, data scientists test many different models from various libraries with different hyperparameters. Tracking these various results poses an organizational challenge. In brief, storing experiments, results, models, supplementary artifacts, and code creates significant challenges.
+
+MLflow Tracking is one of the three main components of MLflow. It is a logging API specific for machine learning and agnostic to libraries and environments that do the training. It is organized around the concept of runs, which are executions of data science code. Runs are aggregated into experiments where many runs can be a part of a given experiment and an MLflow server can host many experiments.
+
+Each run can record the following information:
+
+    Parameters: Key-value pairs of input parameters such as the number of trees in a random forest model
+    Metrics: Evaluation metrics such as RMSE or Area Under the ROC Curve
+    Artifacts: Arbitrary output files in any format. This can include images, pickled models, and data files
+    Source: The code that originally ran the experiment
+
+MLflow tracking also serves as a model registry so tracked models can easily be stored and, as necessary, deployed into production.
+
+Experiments can be tracked using libraries in Python, R, and Java as well as by using the CLI and REST calls. This course will use Python, though the majority of MLflow functionality is also exposed in these other APIs.
+
+
+## GETTING STARTED WITH MLFLOW 
   
   ### ENVIRONMENT_SETUP for MLFLOW:
   * Step-01 : Install Python. Download the appropiate version from [https://www.python.org/downloads/windows/]. Once Downloaded, run the installer.Make sure you select the Install launcher for all users and Add Python 3.7 to PATH checkboxes. Click Install Now. Verify python is installed by typing ["python" on the command prompt].
@@ -45,41 +63,29 @@ MLflow designed to take care about the following :
       bash ~/miniconda.sh -b -p $HOME/miniconda
 
 ```
-### TRANING THE ML MODEL WITH MLFLOW
-
+### TRAINING THE ML MODEL WITH MLFLOW
+Traing the model with the different hyper-parameters and compare the results. 
+```
+   Commands
+   python3 examples/sklearn_elasticnet_wine/train.py
+   python examples/sklearn_elasticnet_wine/train.py <alpha> <l1_ratio>
+   mlflow ui
+   http://localhost:5000
+   
+```
   
-  ## Packaging Training Code in a Conda Environment
+## PACKAGING TRAINING CODE IN A CONDA ENVIRONMENT Packaging 
   You do this by using MLflow Projects conventions to specify the dependencies and entry points to your code. The sklearn_elasticnet_wine/MLproject file specifies that the project has the dependencies located in a Conda environment file called conda.yaml and has one entry point that takes two parameters: alpha and l1_ratio.
   To run this project, invoke mlflow run examples/sklearn_elasticnet_wine -P alpha=0.42. After running this command, MLflow runs your training code in a new Conda environment with the dependencies specified in conda.yaml.
 
 If the repository has an MLproject file in the root you can also run a project directly from GitHub. This tutorial is duplicated in the https://github.com/mlflow/mlflow-example repository which you can run with mlflow run https://github.com/mlflow/mlflow-example.git -P alpha=5
 
-## Serving the model
+## SERVING THE MODEL
 Now that you have packaged your model using the MLproject convention and have identified the best model, it is time to deploy the model using MLflow Models. An MLflow Model is a standard format for packaging machine learning models that can be used in a variety of downstream tools — for example, real-time serving through a REST API or batch inference on Apache Spark.
 In the example training code, after training the linear regression model, a function in MLflow saved the model as an artifact within the run.
 [mlflow.sklearn.log_model(lr, "model")]
 
 # MLflow: Managing the Machine Learning Lifecycle 
-
-## Experiment Tracking with MLFlow
-Over the course of the machine learning life cycle, data scientists test many different models from various libraries with different hyperparameters. Tracking these various results poses an organizational challenge. In brief, storing experiments, results, models, supplementary artifacts, and code creates significant challenges.
-
-MLflow Tracking is one of the three main components of MLflow. It is a logging API specific for machine learning and agnostic to libraries and environments that do the training. It is organized around the concept of runs, which are executions of data science code. Runs are aggregated into experiments where many runs can be a part of a given experiment and an MLflow server can host many experiments.
-
-Each run can record the following information:
-
-    Parameters: Key-value pairs of input parameters such as the number of trees in a random forest model
-    Metrics: Evaluation metrics such as RMSE or Area Under the ROC Curve
-    Artifacts: Arbitrary output files in any format. This can include images, pickled models, and data files
-    Source: The code that originally ran the experiment
-
-MLflow tracking also serves as a model registry so tracked models can easily be stored and, as necessary, deployed into production.
-
-Experiments can be tracked using libraries in Python, R, and Java as well as by using the CLI and REST calls. This course will use Python, though the majority of MLflow functionality is also exposed in these other APIs.
-
-
-
-
 
 
 
