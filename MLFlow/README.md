@@ -47,6 +47,7 @@ Now that you have packaged your model using the MLproject convention and have id
 In the example training code, after training the linear regression model, a function in MLflow saved the model as an artifact within the run.
 [mlflow.sklearn.log_model(lr, "model")]
 
+# MLflow: Managing the Machine Learning Lifecycle 
 
   
   ### Important Links
