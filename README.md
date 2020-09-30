@@ -141,5 +141,5 @@ To explain why, here’s a typical life cycle of a machine learning model:
 * RENDEZVOUS ARCHITECTURE:https://www.bigdatarepublic.nl/articles/machine-learning-models-aws-rendezvous-architecture/
 * https://neptune.ai/blog/the-best-mlflow-alternatives
 * https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/standard-deployment.html
-
+* IMPORTANT : https://www.ritchieng.com/machine-learning-systems-design/
 
