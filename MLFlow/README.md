@@ -10,10 +10,40 @@
   but even these platforms are limited to a few supported algorithms and to each company's internal infrastructure. 
   
 ### ML Lifecycle and Challanges
+#### EVEN AFTER DEPLOYMENT, OPERAITNG ML IS COMPLEX
+* Monitoring Preformance of the Model.
+* Data Drift - Data is changing or verions of the deployment is different from the version in prod.
+* Governance and Security. 
+* Teams spending more that >50% for maintaining the existing models instead of building new one for new use cases.
+
+#### WHY ML is HARD to OPERATIONALIZE?
+* Dependency on Data. ML needs new data, consistent. (Challabges of maintaining the date pipeline have to be solved to do MLOps)
+* Multiple Applciaiton specific ways to determine the preformances. (Application specific of settle ways)
+* Many Teams and systems involved.
+
+![image](https://user-images.githubusercontent.com/13011167/95012017-c3faa380-0652-11eb-8be1-a03a8cd7f51f.png)
+
+##### RESPONSE - ML Platforms
+* Software Platforms to manage ML Applications from developemnt to productions.
+* Most Companies that use ML at scale are building one.
+* Tech Companies - Uber Michelangelo, Google TFX and Facebook FBLearner.
+
 * MLflow, a new open source project from Databricks that aims to design an open ML platform where organizations can use any ML library and development tool of 
   their choice to reliably build and share ML applications. MLflow introduces simple abstractions to package reproducible projects, track results, and encapsulate 
   models that can be used with many existing tools, accelerating the ML lifecycle for organizations of any size.
   ![image](https://user-images.githubusercontent.com/13011167/94446051-c2019200-01c5-11eb-8bc1-42446499616f.png)
+
+#### COMMON COMPONENTS IN AN ML PLATOFRMS
+* Data Management in developemnt and at scoring times. Data transformation, quality monitoring, data versioning (data Lake, Hive etc) and feature stores.
+* Model Management - Packaging, review , quality assurance and versioning. ( Model Registery- Mlflow, pytorch hub, TF hub, etc ; )
+* Code & Deployment Management - Reproducibility, deployment , monitoring and experimentaiton. (Experiment management & Packing- MlFlow, Deployment- kubeflow, Seldoms; Amazon sagemaker etc.)
+
+#### APPROACH
+* Every team's requirement is different and change overtime. 
+* Provide a general platform that is easy to integrate with diverse tools. Creating the Model registory and Data versioning and then making it easy to integrate using the APIs etc.
+* OPTUM IQ Workbench, MLFOW, DATA Lake etc.
+
+ ![image](https://user-images.githubusercontent.com/13011167/95012471-7b44e980-0656-11eb-9f33-1ab6127e6435.png)
 
 # GETTING STARTED WITH MLFLOW 
 
