@@ -103,7 +103,8 @@
 
 ```
 
-### MLFOW TRACKING - Experiment Tracking
+## MLFOW TRACKING - Experiment Tracking
+### 1.Concept 
 * Over the course of the machine learning life cycle, data scientists test many different models from various libraries with different hyperparameters. Tracking 
   these various results poses an organizational challenge. In brief, storing experiments, results, models, supplementary artifacts, and code creates significant 
   challenges.
@@ -119,8 +120,11 @@
   * Source: The code that originally ran the experiment
 
 * MLflow tracking also serves as a model registry so tracked models can easily be stored and, as necessary, deployed into production. Experiments can be tracked 
-  using libraries in Python, R, and Java as well as by using the CLI and REST calls. This course will use Python, though the majority of MLflow functionality is 
-  also exposed in these other APIs.
+  using libraries in Python, R, and Java as well as by using the CLI and REST calls. 
+  
+### 2.Where Runs Are Recorded
+* MLflow runs can be recorded to local files, to a SQLAlchemy compatible database, or remotely to a tracking server. By default, the MLflow Python API logs runs locally to files in an mlruns directory wherever you ran your program. You can then run mlflow ui to see the logged runs.
+* To log runs remotely, set the MLFLOW_TRACKING_URI environment variable to a tracking server’s URI or call mlflow.set_tracking_uri().
 
 ### TRAINING ML MODEL WITH MLFLOW
 Training the model with the different hyper-parameters and compare the results. 
