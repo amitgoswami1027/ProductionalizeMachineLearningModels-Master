@@ -44,8 +44,21 @@
 * OPTUM IQ Workbench, MLFOW, DATA Lake etc.
 
  ![image](https://user-images.githubusercontent.com/13011167/95012471-7b44e980-0656-11eb-9f33-1ab6127e6435.png)
+ 
+#### CUSTOM ML Platforms : 
+##### Uber’s - Michelangelo; Facebook-FBLearner Flow and Google - TFX
+*  These platforms are very powerful - Standardize the data prep/training/deployment cycle. As long you work within APIs in these platforms you get the application or pipeline which can be modified and applied very easily. Its good idea to develop ML Platform
+* Every Platform is limited to few algorithms and frameworks.
+* Each platform is very my customized around the infrastructure of these companies so there is no sharing of common work around it.
+* MLFLOW helps here to integrated end to end ML Pipeline:
+  * MlFlow Tracking - Experiment Tracking
+  * MLFlow Projects - Reproduciable Runs
+  * MLFlow Models - Model Packaging
 
-# GETTING STARTED WITH MLFLOW 
+##### MLFlow - Supported Integrations
+  ![image](https://user-images.githubusercontent.com/13011167/96889260-0d951c00-14a4-11eb-879f-80b91e4e3631.png)
+
+## GETTING STARTED WITH MLFLOW 
 
 ### MLflow designed to take care about the following :
 * Open interface: MLflow is designed to work with any ML library, algorithm, deployment tool or language. It’s built around REST APIs and simple data formats 
@@ -90,7 +103,7 @@
 
 ```
 
-### MLFOW TRACKING 
+### MLFOW TRACKING - Experiment Tracking
 * Over the course of the machine learning life cycle, data scientists test many different models from various libraries with different hyperparameters. Tracking 
   these various results poses an organizational challenge. In brief, storing experiments, results, models, supplementary artifacts, and code creates significant 
   challenges.
@@ -154,6 +167,16 @@ Training the model with the different hyper-parameters and compare the results.
 
   
   ### Important Links
+  * What is MLflow at a high level?
+    * MLflow at a high level by MLFOW Creator (Matei Zaharia): https://databricks.com/session/accelerating-the-machine-learning-lifecycle-with-mlflow-1-0
+  * What is a good source for the larger context of machine learning tools?
+    * Podcast Roaring Elephant : https://roaringelephant.org/2019/06/18/episode-145-alex-zeltov-on-mlops-with-mlflow-kubeflow-and-other-tools-part-1/#more-1958
+  * Where can I find the MLflow docs?
+    * https://www.mlflow.org/docs/latest/index.html
+    
   * Getting started with mlFlow : https://towardsdatascience.com/getting-started-with-mlflow-52eff8c09c61
   * Productizing Machine Learning Models: https://blog.sasken.com/productizing-machine-learning-models-an-introduction#:~:text=The%20typical%20machine%20learning%20
   * https://community.cloud.databricks.com/login.html
+  ### Data Bricks Setup
+  * https://www.databricks.training/step-by-step/creating-clusters-on-aws/
+  
