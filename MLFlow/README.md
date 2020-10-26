@@ -112,7 +112,7 @@ Different aspects: Data Science (typically - data preperation, experiment phase 
 
 ```
 
-## MLFOW TRACKING Server - Experiment Tracking 
+## A.MLFOW TRACKING Server - Experiment Tracking 
 ### 1.Concept (Logging API, RUNs)
 * Over the course of the machine learning life cycle, data scientists test many different models from various libraries with different hyperparameters. Tracking 
   these various results poses an organizational challenge. In brief, storing experiments, results, models, supplementary artifacts, and code creates significant 
@@ -172,19 +172,53 @@ Training the model with the different hyper-parameters and compare the results.
 ![image](https://user-images.githubusercontent.com/13011167/97162087-b8f3e880-17a4-11eb-928d-3eb166aadadf.png)
 ![image](https://user-images.githubusercontent.com/13011167/97162140-cad58b80-17a4-11eb-9255-a9b66c1921ec.png)
 
-## MLFOW PROJECTS - Packaging ML Projects
+## B.MLFOW PROJECTS - Packaging ML Projects
+### 1.Concept 
 * Projects have various library dependencies so shipping a machine learning solution involves the environment in which it was built. MLflow allows for this 
-  environment to be a conda environment or docker container. This means that teams can easily share and publish their code for others to use.
+  environment to be a CONDA environment or DOCKER container. This means that teams can easily share and publish their code for others to use.
 * Machine learning projects become increasingly complex as time goes on. This includes ETL and featurization steps, machine learning models used for pre-
   processing, and finally the model training itself.
 * Each component of a machine learning pipeline needs to allow for tracing its lineage. If there's a failure at some point, tracing the full end-to-end lineage of 
   a model allows for easier debugging.
-* ML Projects is a specification for how to organize code in a project. The heart of this is an MLproject file, a YAML specification for the components of an ML 
+* ML Projects is a specification for how to organize code in a project. The heart of this is an ML project file, a YAML specification for the components of an ML 
   project. This allows for more complex workflows since a project can execute another project, allowing for encapsulation of each stage of a more complex machine 
   learning architecture. This means that teams can collaborate more easily using this architecture.
   
    ![IMAGE](https://user-images.githubusercontent.com/13011167/94451498-190a6580-01cc-11eb-940c-fa44393b1a4d.png)
   
+ ### 2.MLFlow Project options - Local or Remote
+  ![image](https://user-images.githubusercontent.com/13011167/97164127-adee8780-17a7-11eb-89e8-fe026991a665.png)
+ 
+ ### 3.MLFlow Code Structure
+ * MLProject
+ * conda.yaml
+ * main.py
+ * model.py
+ 
+## C.MLFOW MODELS - Packaging 
+### 1.Concept 
+* Once a model has been trained and bundled with the environment it was trained in. The next step is to package the model so that it can be used by a varity of 
+  serving tools.
+* Different deployment options available are:
+  * Container-based REST Servers : on demand clicks
+  * Spark Streaming: iot, telemetry
+  * Batch: Batch scoring
+  * Managed cloud platforms such as Azure ML and AWS SageMaker.
+* Packaging the final model in a platform-agnostic ways offers the most flexibility in deployment options and allows reuse across a number of platforms.
+
+ ### 2.MLFlow Models integrations with ML Frameworks
+![image](https://user-images.githubusercontent.com/13011167/97165453-b647c200-17a9-11eb-8ac0-e243bd0313f4.png)
+
+### 3.MLFlow Models Types
+* BATCH Inferencing (Scoring)
+  * This represent most of the use cases of ML model deployments
+  * This normally means running the predictions from a model and serving them somewhere (db, filesystem etc) for later use.
+  * For LIVE serving, results are often saved to the database that will serve the saved predication quickly.
+  * Other use cases, such as populating emails, they can be stored in less performant data stores such as a blob store.
+
+* REAL time interfacing
+  * Generating predications for a small number of records with fast results ( e.g results in millisec)
+
 ### PACKAGING TRAINING CODE IN A CONDA ENVIRONMENT Packaging 
 * You do this by using MLflow Projects conventions to specify the dependencies and entry points to your code. The sklearn_elasticnet_wine/MLproject file specifies 
   that the project has the dependencies located in a Conda environment file called conda.yaml and has one entry point that takes two parameters: alpha and 
@@ -192,6 +226,8 @@ Training the model with the different hyper-parameters and compare the results.
 * To run this project, invoke mlflow run examples/sklearn_elasticnet_wine -P alpha=0.42. After running this command, MLflow runs your training code in a new Conda 
   environment with the dependencies specified in conda.yaml.
 * If the repository has an MLproject file in the root you can also run a project directly from GitHub. This tutorial is duplicated in the https://github.com/mlflow/mlflow-example repository which you can run with mlflow run https://github.com/mlflow/mlflow-example.git -P alpha=5
+
+
 
 ### SERVING THE MODEL
 * Now that we have packaged the model using the MLproject convention and have identified the best model, it is time to deploy the model using MLflow. An MLflow 
