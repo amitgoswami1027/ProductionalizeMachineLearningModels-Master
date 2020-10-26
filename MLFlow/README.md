@@ -21,8 +21,6 @@
 * Multiple Applciaiton specific ways to determine the preformances. (Application specific of settle ways)
 * Many Teams and systems involved.
 
-![image](https://user-images.githubusercontent.com/13011167/95012017-c3faa380-0652-11eb-8be1-a03a8cd7f51f.png)
-
 ##### RESPONSE - ML Platforms
 * Software Platforms to manage ML Applications from developemnt to productions.
 * Most Companies that use ML at scale are building one.
@@ -32,6 +30,7 @@
   their choice to reliably build and share ML applications. MLflow introduces simple abstractions to package reproducible projects, track results, and encapsulate 
   models that can be used with many existing tools, accelerating the ML lifecycle for organizations of any size.
   ![image](https://user-images.githubusercontent.com/13011167/94446051-c2019200-01c5-11eb-8bc1-42446499616f.png)
+
 
 #### COMMON COMPONENTS IN AN ML PLATOFRMS
 * Data Management in developemnt and at scoring times. Data transformation, quality monitoring, data versioning (data Lake, Hive etc) and feature stores.
@@ -45,17 +44,28 @@
 
  ![image](https://user-images.githubusercontent.com/13011167/95012471-7b44e980-0656-11eb-9f33-1ab6127e6435.png)
  
-#### CUSTOM ML Platforms : 
+##### ML Challanges
+* 100s of software tools to leverage
+* No Model Management/Tracking. ( Hard to track & reproduce results - code, data ,params and metrics.
+* Hard to Productionize models. Deployment require re-write from data scientists to software Engineers. Restrict model complexity to simplify model deployment.
+
+#### CUSTOM ML Platforms Vs MLFlow: 
 ##### Uber’s - Michelangelo; Facebook-FBLearner Flow and Google - TFX
 *  These platforms are very powerful - Standardize the data prep/training/deployment cycle. As long you work within APIs in these platforms you get the application or pipeline which can be modified and applied very easily. Its good idea to develop ML Platform
 * Every Platform is limited to few algorithms and frameworks.
 * Each platform is very my customized around the infrastructure of these companies so there is no sharing of common work around it.
-* MLFLOW helps here to integrated end to end ML Pipeline:
+* MLFLOW helps here to integrated end to end ML Pipeline in "OPEN" Manner. (Open Standard)
   * MlFlow Tracking - Experiment Tracking
   * MLFlow Projects - Reproduciable Runs
   * MLFlow Models - Model Packaging
+  * Runs teh same way anywhere : on-prem or any cloud
+  * Zero code refactor between research ready models and production deployments
+  
 
 ##### MLFlow - Supported Integrations
+
+
+
   ![image](https://user-images.githubusercontent.com/13011167/96889260-0d951c00-14a4-11eb-879f-80b91e4e3631.png)
 
 ## GETTING STARTED WITH MLFLOW 
@@ -102,6 +112,21 @@
       bash ~/miniconda.sh -b -p $HOME/miniconda
 
 ```
+## ML END TO END DEVELOPMENT IS COMPLEX !!
+![image](https://user-images.githubusercontent.com/13011167/97157173-c5287780-179d-11eb-957b-94764554bb98.png)
+
+
+
+Different aspects:
+1. Data Science (typically - data preperation, experiment phase - Statistical analysis, train and  data build model. Creating and registering the model's central repo- file system, git hub or docker registery and create image out of it).
+2. Deployment
+3. Model Serving
+4. Model Monitoring
+
+OPERATIONLIZE - PRODUCTIONLIZING MODELS
+LINEAR and Logistic regression Models.
+
+
 
 ## MLFOW TRACKING - Experiment Tracking
 ### 1.Concept 
