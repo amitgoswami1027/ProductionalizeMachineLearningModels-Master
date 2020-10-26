@@ -12,7 +12,7 @@
 * 100s of software tools to leverage , No Model Management/Tracking. ( Hard to track & reproduce results - code, data ,params and metrics , Hard to Productionize 
   models. Deployment require re-write from data scientists to software Engineers. Restrict model complexity to simplify model deployment.
 
-#### CUSTOM ML Platforms Vs MLFlow: 
+### CUSTOM ML Platforms Vs MLFlow: 
 * Uber’s - Michelangelo; Facebook-FBLearner Flow and Google - TFX (Vs MLFlow)
 * These platforms are very powerful - Standardize the data prep/training/deployment cycle. As long you work within APIs in these platforms you get the application 
   or pipeline which can be modified and applied very easily. Its good idea to develop ML Platform
@@ -40,7 +40,6 @@ Different aspects: Data Science (typically - data preperation, experiment phase 
 * Every team's requirement is different and change overtime. 
 * Provide a general platform that is easy to integrate with diverse tools. Creating the Model registory and Data versioning and then making it easy to integrate using the APIs etc.
 * OPTUM IQ Workbench, MLFOW, DATA Lake etc.
- ![image](https://user-images.githubusercontent.com/13011167/95012471-7b44e980-0656-11eb-9f33-1ab6127e6435.png)
  
 #### MLFlow - Supported Integrations
   ![image](https://user-images.githubusercontent.com/13011167/96889260-0d951c00-14a4-11eb-879f-80b91e4e3631.png)
@@ -154,7 +153,7 @@ Training the model with the different hyper-parameters and compare the results.
 ![image](https://user-images.githubusercontent.com/13011167/97162087-b8f3e880-17a4-11eb-928d-3eb166aadadf.png)
 ![image](https://user-images.githubusercontent.com/13011167/97162140-cad58b80-17a4-11eb-9255-a9b66c1921ec.png)
 
-## B.MLFOW PROJECTS - Packaging ML Projects
+## B.MLFlow PROJECTS - Packaging ML Projects
 ### 1.Concept 
 * Projects have various library dependencies so shipping a machine learning solution involves the environment in which it was built. MLflow allows for this 
   environment to be a CONDA environment or DOCKER container. This means that teams can easily share and publish their code for others to use.
@@ -220,20 +219,16 @@ Training the model with the different hyper-parameters and compare the results.
 
 # MLflow: Managing the Machine Learning Lifecycle 
 
+ ![image](https://user-images.githubusercontent.com/13011167/95012471-7b44e980-0656-11eb-9f33-1ab6127e6435.png)
 
 
-  
   ### Important Links
-  * What is MLflow at a high level?
-    * MLflow at a high level by MLFOW Creator (Matei Zaharia): https://databricks.com/session/accelerating-the-machine-learning-lifecycle-with-mlflow-1-0
-  * What is a good source for the larger context of machine learning tools?
-    * Podcast Roaring Elephant : https://roaringelephant.org/2019/06/18/episode-145-alex-zeltov-on-mlops-with-mlflow-kubeflow-and-other-tools-part-1/#more-1958
-  * Where can I find the MLflow docs?
-    * https://www.mlflow.org/docs/latest/index.html
-    
+  * What is MLflow at a high level? MLflow at a high level by MLFOW Creator (Matei Zaharia): https://databricks.com/session/accelerating-the-machine-learning-lifecycle-with-mlflow-1-0
+  * What is a good source for the larger context of machine learning tools? Podcast Roaring Elephant : https://roaringelephant.org/2019/06/18/episode-145-alex-zeltov-on-mlops-with-mlflow-kubeflow-and-other-tools-part-1/#more-1958
+  * Where can I find the MLflow docs? https://www.mlflow.org/docs/latest/index.html 
   * Getting started with mlFlow : https://towardsdatascience.com/getting-started-with-mlflow-52eff8c09c61
   * Productizing Machine Learning Models: https://blog.sasken.com/productizing-machine-learning-models-an-introduction#:~:text=The%20typical%20machine%20learning%20
   * https://community.cloud.databricks.com/login.html
-  ### Data Bricks Setup
+  ### Data Bricks Setup  
   * https://www.databricks.training/step-by-step/creating-clusters-on-aws/
   
