@@ -1,4 +1,4 @@
-# MLFlow - Databricks Academy Course
+# Machine Learning Lifecycle and Challanges
 * Machine Learning end to end development and deployment is complex and considering non-determinstic nature of the subject it become more important to straterzie 
   appropiately for intergating it to the business and our products. Moving a model to production can be challenging due to the plethora of deployment tools and 
   environments it needs to run in (e.g. REST serving, batch inference, or mobile apps). There is no standard way to move models from any library to any of these 
@@ -9,52 +9,13 @@
   to use many distinct systems to productionize models. To address these problems, many companies are building custom "ML platforms" that automate this lifecycle, 
   but even these platforms are limited to a few supported algorithms and to each company's internal infrastructure. 
   
-# ML Lifecycle and Challanges
-### ML END TO END DEVELOPMENT IS COMPLEX !!
-![image](https://user-images.githubusercontent.com/13011167/97157173-c5287780-179d-11eb-957b-94764554bb98.png)
+* 100s of software tools to leverage , No Model Management/Tracking. ( Hard to track & reproduce results - code, data ,params and metrics , Hard to Productionize 
+  models. Deployment require re-write from data scientists to software Engineers. Restrict model complexity to simplify model deployment.
 
-Different aspects: Data Science (typically - data preperation, experiment phase - Statistical analysis, train and  data build model. Creating and registering the model's central repo- file system, git hub or docker registery and create image out of it). ;Deployment ; Model Serving and Model Monitoring.
-
-### EVEN AFTER DEPLOYMENT, OPERAITNG ML IS COMPLEX
-* Monitoring Preformance of the Model.
-* Data Drift - Data is changing or verions of the deployment is different from the version in prod.
-* Governance and Security. 
-* Teams spending more that >50% for maintaining the existing models instead of building new one for new use cases.
-
-### WHY ML is HARD to OPERATIONALIZE?
-* Dependency on Data. ML needs new data, consistent. (Challabges of maintaining the date pipeline have to be solved to do MLOps)
-* Multiple Applciaiton specific ways to determine the preformances. (Application specific of settle ways)
-* Many Teams and systems involved.
-
-### RESPONSE - ML Platforms
-* Software Platforms to manage ML Applications from developemnt to productions.
-* Most Companies that use ML at scale are building one.
-* Tech Companies - Uber Michelangelo, Google TFX and Facebook FBLearner.
-* MLflow, a new open source project from Databricks that aims to design an open ML platform where organizations can use any ML library and development tool of 
-  their choice to reliably build and share ML applications. MLflow introduces simple abstractions to package reproducible projects, track results, and encapsulate 
-  models that can be used with many existing tools, accelerating the ML lifecycle for organizations of any size.
-  ![image](https://user-images.githubusercontent.com/13011167/94446051-c2019200-01c5-11eb-8bc1-42446499616f.png)
-
-### COMMON COMPONENTS IN AN ML PLATOFRMS
-* Data Management in developemnt and at scoring times. Data transformation, quality monitoring, data versioning (data Lake, Hive etc) and feature stores.
-* Model Management - Packaging, review , quality assurance and versioning. ( Model Registery- Mlflow, pytorch hub, TF hub, etc ; )
-* Code & Deployment Management - Reproducibility, deployment , monitoring and experimentaiton. (Experiment management & Packing- MlFlow, Deployment- kubeflow, Seldoms; Amazon sagemaker etc.)
-
-### APPROACH
-* Every team's requirement is different and change overtime. 
-* Provide a general platform that is easy to integrate with diverse tools. Creating the Model registory and Data versioning and then making it easy to integrate using the APIs etc.
-* OPTUM IQ Workbench, MLFOW, DATA Lake etc.
-
- ![image](https://user-images.githubusercontent.com/13011167/95012471-7b44e980-0656-11eb-9f33-1ab6127e6435.png)
- 
-### ML Challanges
-* 100s of software tools to leverage
-* No Model Management/Tracking. ( Hard to track & reproduce results - code, data ,params and metrics.
-* Hard to Productionize models. Deployment require re-write from data scientists to software Engineers. Restrict model complexity to simplify model deployment.
-
-### CUSTOM ML Platforms Vs MLFlow: 
-#### Uber’s - Michelangelo; Facebook-FBLearner Flow and Google - TFX
-*  These platforms are very powerful - Standardize the data prep/training/deployment cycle. As long you work within APIs in these platforms you get the application or pipeline which can be modified and applied very easily. Its good idea to develop ML Platform
+#### CUSTOM ML Platforms Vs MLFlow: 
+* Uber’s - Michelangelo; Facebook-FBLearner Flow and Google - TFX (Vs MLFlow)
+* These platforms are very powerful - Standardize the data prep/training/deployment cycle. As long you work within APIs in these platforms you get the application 
+  or pipeline which can be modified and applied very easily. Its good idea to develop ML Platform
 * Every Platform is limited to few algorithms and frameworks.
 * Each platform is very my customized around the infrastructure of these companies so there is no sharing of common work around it.
 * MLFLOW helps here to integrated end to end ML Pipeline in "OPEN" Manner. (Open Standard)
@@ -64,10 +25,31 @@ Different aspects: Data Science (typically - data preperation, experiment phase 
   * Runs teh same way anywhere : on-prem or any cloud
   * Zero code refactor between research ready models and production deployments
   
+### ML END TO END DEVELOPMENT IS COMPLEX !!
+![image](https://user-images.githubusercontent.com/13011167/97157173-c5287780-179d-11eb-957b-94764554bb98.png)
+
+Different aspects: Data Science (typically - data preperation, experiment phase - Statistical analysis, train and  data build model. Creating and registering the model's central repo- file system, git hub or docker registery and create image out of it). ;Deployment ; Model Serving and Model Monitoring.
+
+### WHY ML is HARD to OPERATIONALIZE?
+* Dependency on Data. ML needs new data, consistent. (Challabges of maintaining the date pipeline have to be solved to do MLOps)
+* Multiple Applciaiton specific ways to determine the preformances. (Application specific of settle ways)
+* Monitoring Preformance of the Model.
+* Data Drift - Data is changing or verions of the deployment is different from the version in prod.
+* Governance and Security. 
+* Teams spending more that >50% for maintaining the existing models instead of building new one for new use cases.
+* Every team's requirement is different and change overtime. 
+* Provide a general platform that is easy to integrate with diverse tools. Creating the Model registory and Data versioning and then making it easy to integrate using the APIs etc.
+* OPTUM IQ Workbench, MLFOW, DATA Lake etc.
+ ![image](https://user-images.githubusercontent.com/13011167/95012471-7b44e980-0656-11eb-9f33-1ab6127e6435.png)
+ 
 #### MLFlow - Supported Integrations
   ![image](https://user-images.githubusercontent.com/13011167/96889260-0d951c00-14a4-11eb-879f-80b91e4e3631.png)
 
 # GETTING STARTED WITH MLFLOW 
+* MLflow, a new open source project from Databricks that aims to design an open ML platform where organizations can use any ML library and development tool of 
+  their choice to reliably build and share ML applications. MLflow introduces simple abstractions to package reproducible projects, track results, and encapsulate 
+  models that can be used with many existing tools, accelerating the ML lifecycle for organizations of any size.
+  ![image](https://user-images.githubusercontent.com/13011167/94446051-c2019200-01c5-11eb-8bc1-42446499616f.png)
 
 ### MLflow designed to take care about the following :
 * Open interface: MLflow is designed to work with any ML library, algorithm, deployment tool or language. It’s built around REST APIs and simple data formats 
