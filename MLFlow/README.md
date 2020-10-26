@@ -1,17 +1,20 @@
 # MACHINE LEARNING OPS USING MLFLOW
 ## Machine Learning Lifecycle and Challanges
-* Machine Learning end to end development and deployment is complex and considering non-determinstic nature of the subject it become more important to straterzie 
-  appropiately for intergating it to the business and our products. Moving a model to production can be challenging due to the plethora of deployment tools and 
-  environments it needs to run in (e.g. REST serving, batch inference, or mobile apps). There is no standard way to move models from any library to any of these 
-  tools, creating a new risk with each new deployment.
+* PORTABILITY: Machine Learning end to end development and deployment is complex and considering non-determinstic nature of the subject it become more important to 
+  straterzie appropiately for intergating it to the business and our products. Moving a model to production can be challenging due to the plethora of deployment 
+  tools and environments it needs to run in (e.g. REST serving, batch inference, or mobile apps). There is no standard way to move models from any library to any 
+  of these tools, creating a new risk with each new deployment.
 
+* COMPATABILITY: Data scientists build the models on different tools and make use of different packages and libraries. When these packages or libraries are updated 
+  prior deployed models become in-compitent with the latest deployed environment. This casues the failure of the deployed models. 
+
+* 100s of software tools to leverage , No Model Management/Tracking. ( Hard to track & reproduce results - code, data ,params and metrics , Hard to Productionize 
+  models. Deployment require re-write from data scientists to software Engineers. Restrict model complexity to simplify model deployment.
+  
 * ML development brings many new complexities beyond the traditional software development lifecycle. Unlike in traditional software development, ML developers want 
   to try multiple algorithms, tools and parameters to get the best results, and they need to track this information to reproduce work. In addition, developers need 
   to use many distinct systems to productionize models. To address these problems, many companies are building custom "ML platforms" that automate this lifecycle, 
   but even these platforms are limited to a few supported algorithms and to each company's internal infrastructure. 
-  
-* 100s of software tools to leverage , No Model Management/Tracking. ( Hard to track & reproduce results - code, data ,params and metrics , Hard to Productionize 
-  models. Deployment require re-write from data scientists to software Engineers. Restrict model complexity to simplify model deployment.
 
 ### CUSTOM ML Platforms Vs MLFlow: 
 * Uber’s - Michelangelo; Facebook-FBLearner Flow and Google - TFX (Vs MLFlow)
@@ -26,48 +29,47 @@
   * Runs teh same way anywhere : on-prem or any cloud
   * Zero code refactor between research ready models and production deployments
   
-###  Machine Learning Pipeline is Complex !!
+###  Machine Learning Pipeline Development is Complex !! Why??
+
+### WHY ML is HARD to OPERATIONALIZE?
+* Dependency on Data. ML needs new data, consistent. (Challabges of maintaining the date pipeline have to be solved to do MLOps).
+* Data Drift - Data is changing or verions of the deployment is different from the version in prod.
+* Monitoring Preformance of the Model, Governance and Security. 
+* Teams spending more that >50% for maintaining the existing models instead of building new one for new use cases.
+* Every team's requirement is different and change overtime. 
+
+### ML Pipeline Stages/Phases !!
 * DATA Gathering. 
 * DATA Analysis : What variables we can use and what variables we cannot use.
 * DATA PRE-PROCESSING: During feature engineering, we transform the variable to make them useful in the machine learning models, filling missing values etc.
-* FEATURE Selection: Why we need to select feature in first place? Feature selections means finding those variables which are most predictive one and building the models around those variables.
+* FEATURE Selection: Why we need to select feature in first place? Feature selections means finding those variables which are most predictive one and building the 
+  models around those variables.
 * MODEL BUILDING: Typically build various ML algos and choose the ones which give the best results. 
 * UPLIFT IN Business Value: Model bring the actual business value.
 * MODEL DEPLOYMENT
+* Different aspects: Data Science (typically - data preperation, experiment phase - Statistical analysis, train and  data build model. Creating and registering the 
+  model's central repo- file system, git hub or docker registery and create image out of it). ;Deployment ; Model Serving and Model Monitoring.
 
 ![image](https://user-images.githubusercontent.com/13011167/92307830-c071ef00-efb6-11ea-98d8-ce107a957ff0.png)
 
-Different aspects: Data Science (typically - data preperation, experiment phase - Statistical analysis, train and  data build model. Creating and registering the model's central repo- file system, git hub or docker registery and create image out of it). ;Deployment ; Model Serving and Model Monitoring.
 
-### WHY ML is HARD to OPERATIONALIZE?
-* Dependency on Data. ML needs new data, consistent. (Challabges of maintaining the date pipeline have to be solved to do MLOps)
-* Multiple Applciaiton specific ways to determine the preformances. (Application specific of settle ways)
-* Monitoring Preformance of the Model.
-* Data Drift - Data is changing or verions of the deployment is different from the version in prod.
-* Governance and Security. 
-* Teams spending more that >50% for maintaining the existing models instead of building new one for new use cases.
-* Every team's requirement is different and change overtime. 
-* Provide a general platform that is easy to integrate with diverse tools. Creating the Model registory and Data versioning and then making it easy to integrate using the APIs etc.
-* OPTUM IQ Workbench, MLFOW, DATA Lake etc.
- 
-#### MLFlow - Supported Integrations
-  ![image](https://user-images.githubusercontent.com/13011167/96889260-0d951c00-14a4-11eb-879f-80b91e4e3631.png)
 
 # GETTING STARTED WITH MLFLOW 
 
 ### MLflow designed to take care about the following :
 * MLflow, a new open source project from Databricks that aims to design an open ML platform where organizations can use any ML library and development tool of 
-  their choice to reliably build and share ML applications. MLflow introduces simple abstractions to package reproducible projects, track results, and encapsulate 
-  models that can be used with many existing tools, accelerating the ML lifecycle for organizations of any size.
-  ![image](https://user-images.githubusercontent.com/13011167/94446051-c2019200-01c5-11eb-8bc1-42446499616f.png)
-* Open interface: MLflow is designed to work with any ML library, algorithm, deployment tool or language. It’s built around REST APIs and simple data formats 
-  (e.g., a model can be   viewed as a lambda function) that can be used from a variety of tools, instead of only providing a small set of built-in functionality. 
-  This also makes it easy to add MLflow to your existing ML code so you can benefit from it immediately, and to share code using any ML library that others in your 
-  organization can run.
+  their choice to reliably build and share ML applications. 
 * Open source: MLflow as an open source project that users and library developers can extend. In addition, MLflow’s open format makes it very easy to share 
-  workflow steps and models across organizations if you wish to open source your code.
+  workflow steps and models across organizations if you wish to open source your code.MLflow is designed to work with any ML library, algorithm, deployment tool or 
+  language.
+* MLFlow has following components:
+  * MLflow Tracking : Tracking experiments to record and compare parameters and results.
+  * MLflow Projects : Packaging ML code in a reusable, reproducible form in order to share with other data scientists or transfer to production.
+  * MLflow Models: Managing and deploying models from a variety of ML libraries to a variety of model serving and inference platforms.
+  * MLflow Model Registry: Providing a central model store to collaboratively manage the full lifecycle of an MLflow Model, including model versioning, stage 
+    transitions, and annotations 
   
-  ![image](https://user-images.githubusercontent.com/13011167/91650638-a9f00300-ea9f-11ea-8218-e68cb5de129b.png)
+  ![image](https://user-images.githubusercontent.com/13011167/97172697-68d15200-17b5-11eb-8f4c-f1586687dbb6.png)
 
 ### ENVIRONMENT SETUP for MLFLOW:
   * Step-01 : Install Python. Download the appropiate version from [https://www.python.org/downloads/windows/]. Once Downloaded, run the installer.Make sure you select the Install launcher for all users and Add Python 3.7 to PATH checkboxes. Click Install Now. Verify python is installed by typing ["python" on the command prompt].
@@ -102,8 +104,8 @@ Different aspects: Data Science (typically - data preperation, experiment phase 
 
 ```
 
-## A.MLFlow TRACKING Server - Experiment Tracking 
-### 1.Concept (Logging API, RUNs)
+## A. MLFlow TRACKING Server - Experiment Tracking 
+### 1. Concept (Logging API, RUNs)
 * Over the course of the machine learning life cycle, data scientists test many different models from various libraries with different hyperparameters. Tracking 
   these various results poses an organizational challenge. In brief, storing experiments, results, models, supplementary artifacts, and code creates significant 
   challenges.
@@ -115,7 +117,7 @@ Different aspects: Data Science (typically - data preperation, experiment phase 
 * MLflow tracking also serves as a model registry so tracked models can easily be stored and, as necessary, deployed into production. Experiments can be tracked 
   using libraries in Python, R, and Java as well as by using the CLI and REST calls. 
   
-### 2.Where Runs Are Recorded
+### 2. Where Runs Are Recorded
 * MLFlow tracking server has two component for storage: a backend store and an artifact store.
   * BACKEND STORE: Where MLFLOW Tracking Server stores experiment and run metadata as well as params, metrics and tags for RUNs. MLFLow supports two types of 
     backend stores - file store and database-backed store.
@@ -124,10 +126,10 @@ Different aspects: Data Science (typically - data preperation, experiment phase 
 * MLflow runs can be recorded to local files, to a SQLAlchemy compatible database, or remotely to a tracking server. By default, the MLflow Python API logs runs locally to files in an mlruns directory wherever you ran your program. You can then run mlflow ui to see the logged runs.
 * To log runs remotely, set the MLFLOW_TRACKING_URI environment variable to a tracking server’s URI or call mlflow.set_tracking_uri().
 
-### 3.MLFlow Tracking Server
+### 3. MLFlow Tracking Server
 ![image](https://user-images.githubusercontent.com/13011167/97169233-bc40a180-17af-11eb-9785-806d70cf4093.png)
 
-### 4.TRAINING ML MODEL WITH MLFLOW
+### 4.T RAINING ML MODEL WITH MLFLOW
 * Each run can record the following information:
   * Parameters: Key-value pairs of input parameters such as the number of trees in a random forest model.
   * Metrics: Evaluation metrics such as RMSE or Area Under the ROC Curve.
@@ -157,13 +159,13 @@ Training the model with the different hyper-parameters and compare the results.
    http://localhost:5000
    
 ```
-### 5.Code - Experiment Tracking.
+### 5. Code - Experiment Tracking.
 ![image](https://user-images.githubusercontent.com/13011167/97162043-a5e11880-17a4-11eb-91fc-1b998bc40fe5.png)
 ![image](https://user-images.githubusercontent.com/13011167/97162087-b8f3e880-17a4-11eb-928d-3eb166aadadf.png)
 ![image](https://user-images.githubusercontent.com/13011167/97162140-cad58b80-17a4-11eb-9255-a9b66c1921ec.png)
 
-## B.MLFlow PROJECTS - Packaging ML Projects
-### 1.Concept 
+## B. MLFlow PROJECTS - Packaging ML Projects
+### 1. Concept 
 * Projects have various library dependencies so shipping a machine learning solution involves the environment in which it was built. MLflow allows for this 
   environment to be a CONDA environment or DOCKER container. This means that teams can easily share and publish their code for others to use.
 * Machine learning projects become increasingly complex as time goes on. This includes ETL and featurization steps, machine learning models used for pre-
@@ -176,17 +178,17 @@ Training the model with the different hyper-parameters and compare the results.
   
    ![IMAGE](https://user-images.githubusercontent.com/13011167/94451498-190a6580-01cc-11eb-940c-fa44393b1a4d.png)
   
- ### 2.MLFlow Project options - Local or Remote
+ ### 2. MLFlow Project options - Local or Remote
   ![image](https://user-images.githubusercontent.com/13011167/97164127-adee8780-17a7-11eb-89e8-fe026991a665.png)
  
- ### 3.MLFlow Code Structure
+ ### 3. MLFlow Code Structure
  * MLProject
  * conda.yaml
  * main.py
  * model.py
  
-## C.MLFlow MODELS - Packaging 
-### 1.Concept 
+## C. MLFlow MODELS - Packaging 
+### 1. Concept 
 * Once a model has been trained and bundled with the environment it was trained in. The next step is to package the model so that it can be used by a varity of 
   serving tools.
 * Different deployment options available are:
@@ -196,10 +198,10 @@ Training the model with the different hyper-parameters and compare the results.
   * Managed cloud platforms such as Azure ML and AWS SageMaker.
 * Packaging the final model in a platform-agnostic ways offers the most flexibility in deployment options and allows reuse across a number of platforms.
 
- ### 2.MLFlow Models integrations with ML Frameworks
+ ### 2. MLFlow Models integrations with ML Frameworks
 ![image](https://user-images.githubusercontent.com/13011167/97165453-b647c200-17a9-11eb-8ac0-e243bd0313f4.png)
 
-### 3.MLFlow Models Types
+### 3. MLFlow Models Types
 * BATCH Inferencing (Scoring)
   * This represent most of the use cases of ML model deployments
   * This normally means running the predictions from a model and serving them somewhere (db, filesystem etc) for later use.
@@ -217,8 +219,6 @@ Training the model with the different hyper-parameters and compare the results.
   environment with the dependencies specified in conda.yaml.
 * If the repository has an MLproject file in the root you can also run a project directly from GitHub. This tutorial is duplicated in the https://github.com/mlflow/mlflow-example repository which you can run with mlflow run https://github.com/mlflow/mlflow-example.git -P alpha=5
 
-
-
 ### SERVING THE MODEL
 * Now that we have packaged the model using the MLproject convention and have identified the best model, it is time to deploy the model using MLflow. An MLflow 
   Model is a standard format for packaging machine learning models that can be used in a variety of downstream tools — for example, real-time serving through a 
@@ -230,7 +230,10 @@ Training the model with the different hyper-parameters and compare the results.
 
  ![image](https://user-images.githubusercontent.com/13011167/95012471-7b44e980-0656-11eb-9f33-1ab6127e6435.png)
 
-
+### MLFlow - Supported Integrations
+  ![image](https://user-images.githubusercontent.com/13011167/96889260-0d951c00-14a4-11eb-879f-80b91e4e3631.png)
+  ![image](https://user-images.githubusercontent.com/13011167/94446051-c2019200-01c5-11eb-8bc1-42446499616f.png)
+   ![image](https://user-images.githubusercontent.com/13011167/91650638-a9f00300-ea9f-11ea-8218-e68cb5de129b.png)
   ### Important Links
   * What is MLflow at a high level? MLflow at a high level by MLFOW Creator (Matei Zaharia): https://databricks.com/session/accelerating-the-machine-learning-lifecycle-with-mlflow-1-0
   * What is a good source for the larger context of machine learning tools? Podcast Roaring Elephant : https://roaringelephant.org/2019/06/18/episode-145-alex-zeltov-on-mlops-with-mlflow-kubeflow-and-other-tools-part-1/#more-1958
