@@ -45,12 +45,12 @@ Different aspects: Data Science (typically - data preperation, experiment phase 
   ![image](https://user-images.githubusercontent.com/13011167/96889260-0d951c00-14a4-11eb-879f-80b91e4e3631.png)
 
 # GETTING STARTED WITH MLFLOW 
+
+### MLflow designed to take care about the following :
 * MLflow, a new open source project from Databricks that aims to design an open ML platform where organizations can use any ML library and development tool of 
   their choice to reliably build and share ML applications. MLflow introduces simple abstractions to package reproducible projects, track results, and encapsulate 
   models that can be used with many existing tools, accelerating the ML lifecycle for organizations of any size.
   ![image](https://user-images.githubusercontent.com/13011167/94446051-c2019200-01c5-11eb-8bc1-42446499616f.png)
-
-### MLflow designed to take care about the following :
 * Open interface: MLflow is designed to work with any ML library, algorithm, deployment tool or language. It’s built around REST APIs and simple data formats 
   (e.g., a model can be   viewed as a lambda function) that can be used from a variety of tools, instead of only providing a small set of built-in functionality. 
   This also makes it easy to add MLflow to your existing ML code so you can benefit from it immediately, and to share code using any ML library that others in your 
@@ -60,7 +60,7 @@ Different aspects: Data Science (typically - data preperation, experiment phase 
   
   ![image](https://user-images.githubusercontent.com/13011167/91650638-a9f00300-ea9f-11ea-8218-e68cb5de129b.png)
 
-### ENVIRONMENT_SETUP for MLFLOW:
+### ENVIRONMENT SETUP for MLFLOW:
   * Step-01 : Install Python. Download the appropiate version from [https://www.python.org/downloads/windows/]. Once Downloaded, run the installer.Make sure you select the Install launcher for all users and Add Python 3.7 to PATH checkboxes. Click Install Now. Verify python is installed by typing ["python" on the command prompt].
   * Step-02 : Install virtualnv. Why? Python software packages are installed system-wide by default. Consequently, whenever a single project-specific package is changed, it changes for all your Python projects. You would want to avoid this, and having separate virtual environments for each project is the easiest solution. [pip install virtualenv].
   * Step-03 : Install MLFlow [pip install mlflow] . Install scikit-learn [pip install scikit-learn].
@@ -93,7 +93,7 @@ Different aspects: Data Science (typically - data preperation, experiment phase 
 
 ```
 
-## A.MLFOW TRACKING Server - Experiment Tracking 
+## A.MLFlow TRACKING Server - Experiment Tracking 
 ### 1.Concept (Logging API, RUNs)
 * Over the course of the machine learning life cycle, data scientists test many different models from various libraries with different hyperparameters. Tracking 
   these various results poses an organizational challenge. In brief, storing experiments, results, models, supplementary artifacts, and code creates significant 
@@ -176,7 +176,7 @@ Training the model with the different hyper-parameters and compare the results.
  * main.py
  * model.py
  
-## C.MLFOW MODELS - Packaging 
+## C.MLFlow MODELS - Packaging 
 ### 1.Concept 
 * Once a model has been trained and bundled with the environment it was trained in. The next step is to package the model so that it can be used by a varity of 
   serving tools.
