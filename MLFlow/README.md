@@ -26,8 +26,16 @@
   * Runs teh same way anywhere : on-prem or any cloud
   * Zero code refactor between research ready models and production deployments
   
-### ML END TO END DEVELOPMENT IS COMPLEX !!
-![image](https://user-images.githubusercontent.com/13011167/97157173-c5287780-179d-11eb-957b-94764554bb98.png)
+###  Machine Learning Pipeline is Complex !!
+* DATA Gathering. 
+* DATA Analysis : What variables we can use and what variables we cannot use.
+* DATA PRE-PROCESSING: During feature engineering, we transform the variable to make them useful in the machine learning models, filling missing values etc.
+* FEATURE Selection: Why we need to select feature in first place? Feature selections means finding those variables which are most predictive one and building the models around those variables.
+* MODEL BUILDING: Typically build various ML algos and choose the ones which give the best results. 
+* UPLIFT IN Business Value: Model bring the actual business value.
+* MODEL DEPLOYMENT
+
+![image](https://user-images.githubusercontent.com/13011167/92307830-c071ef00-efb6-11ea-98d8-ce107a957ff0.png)
 
 Different aspects: Data Science (typically - data preperation, experiment phase - Statistical analysis, train and  data build model. Creating and registering the model's central repo- file system, git hub or docker registery and create image out of it). ;Deployment ; Model Serving and Model Monitoring.
 
