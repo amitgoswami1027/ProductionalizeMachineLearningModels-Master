@@ -117,7 +117,7 @@ Different aspects: Data Science (typically - data preperation, experiment phase 
 * To log runs remotely, set the MLFLOW_TRACKING_URI environment variable to a tracking server’s URI or call mlflow.set_tracking_uri().
 
 ### 3.MLFlow Tracking Server
-![image](https://user-images.githubusercontent.com/13011167/97160410-50a40780-17a2-11eb-8e47-bcb2b71ae33c.png)
+![image](https://user-images.githubusercontent.com/13011167/97169233-bc40a180-17af-11eb-9785-806d70cf4093.png)
 
 ### 4.TRAINING ML MODEL WITH MLFLOW
 * Each run can record the following information:
