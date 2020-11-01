@@ -1,12 +1,12 @@
-# MACHINE LEARNING OPS USING MLFLOW
-## Machine Learning Lifecycle and Challanges
-* PORTABILITY: Machine Learning end to end development and deployment is complex and considering non-determinstic nature of the subject it become more important to 
+#  MLflow: A Machine Learning Lifecycle Platform
+## ML Lifecycle Challanges
+* Portability: Machine Learning end to end development and deployment is complex and considering non-determinstic nature of the subject it become more important to 
   straterzie appropiately for intergating it to the business and our products. Moving a model to production can be challenging due to the plethora of deployment 
   tools and environments it needs to run in (e.g. REST serving, batch inference, or mobile apps). There is no standard way to move models from any library to any 
   of these tools, creating a new risk with each new deployment.
 
-* COMPATABILITY: Data scientists build the models on different tools and make use of different packages and libraries. When these packages or libraries are updated 
-  prior deployed models become in-compitent with the latest deployed environment. This casues the failure of the deployed models. 
+* Compartibility: Data scientists build the models on different tools and make use of different packages and libraries. When these packages or libraries are 
+  updated prior deployed models become in-compitent with the latest deployed environment. This casues the failure of the deployed models. 
 
 * 100s of software tools to leverage , No Model Management/Tracking. ( Hard to track & reproduce results - code, data ,params and metrics , Hard to Productionize 
   models. Deployment require re-write from data scientists to software Engineers. Restrict model complexity to simplify model deployment.
@@ -29,7 +29,7 @@
   * Runs teh same way anywhere : on-prem or any cloud
   * Zero code refactor between research ready models and production deployments
   
-###  Machine Learning Pipeline Development is Complex !! Why??
+##  Machine Learning Pipeline Development is Complex !! Why??
 
 ### WHY ML is HARD to OPERATIONALIZE?
 * Dependency on Data. ML needs new data, consistent. (Challabges of maintaining the date pipeline have to be solved to do MLOps).
@@ -52,57 +52,23 @@
 
 ![image](https://user-images.githubusercontent.com/13011167/92307830-c071ef00-efb6-11ea-98d8-ce107a957ff0.png)
 
-
-
 # GETTING STARTED WITH MLFLOW 
+## MLflow: A Machine Learning Lifecycle Platform
 
 ### MLflow designed to take care about the following :
-* MLflow, a new open source project from Databricks that aims to design an open ML platform where organizations can use any ML library and development tool of 
+* MLflow, a an open source platform from Databricks that aims to design an open ML platform where organizations can use any ML library and development tool of 
   their choice to reliably build and share ML applications. 
 * Open source: MLflow as an open source project that users and library developers can extend. In addition, MLflow’s open format makes it very easy to share 
   workflow steps and models across organizations if you wish to open source your code.MLflow is designed to work with any ML library, algorithm, deployment tool or 
   language.
 * MLFlow has following components:
-  * MLflow Tracking : Tracking experiments to record and compare parameters and results.
+  * MLflow Tracking : An API to log parameters, code, and results in machine learning experiments and compare them using an interactive UI.
   * MLflow Projects : Packaging ML code in a reusable, reproducible form in order to share with other data scientists or transfer to production.
-  * MLflow Models: Managing and deploying models from a variety of ML libraries to a variety of model serving and inference platforms.
-  * MLflow Model Registry: Providing a central model store to collaboratively manage the full lifecycle of an MLflow Model, including model versioning, stage 
-    transitions, and annotations 
-  
+  * MLflow Models:  A model packaging format and tools that let you easily deploy the same model (from any ML library) to batch and real-time scoring on platforms 
+    such as Docker, Apache Spark, Azure ML and AWS SageMaker.
+  * MLflow Model Registry: A centralized model store, set of APIs, and UI, to collaboratively manage the full lifecycle of MLflow Models.
+ 
   ![image](https://user-images.githubusercontent.com/13011167/97172697-68d15200-17b5-11eb-8f4c-f1586687dbb6.png)
-
-### ENVIRONMENT SETUP for MLFLOW:
-  * Step-01 : Install Python. Download the appropiate version from [https://www.python.org/downloads/windows/]. Once Downloaded, run the installer.Make sure you select the Install launcher for all users and Add Python 3.7 to PATH checkboxes. Click Install Now. Verify python is installed by typing ["python" on the command prompt].
-  * Step-02 : Install virtualnv. Why? Python software packages are installed system-wide by default. Consequently, whenever a single project-specific package is changed, it changes for all your Python projects. You would want to avoid this, and having separate virtual environments for each project is the easiest solution. [pip install virtualenv].
-  * Step-03 : Install MLFlow [pip install mlflow] . Install scikit-learn [pip install scikit-learn].
-  * Step-04 : Instal conda. [https://conda.io/projects/conda/en/latest/user-guide/install/index.html]
-  * Step-05 : Clone (download) the MLflow repository via git clone https://github.com/mlflow/mlflow .
-  * Step-06 : cd into the examples directory within your clone of MLflow - we’ll use this working directory for running the tutorial. We avoid running directly from our clone of MLflow as doing so would cause the tutorial to use MLflow from source, rather than your PyPI installation of MLflow. The code is located at examples/sklearn_elasticnet_wine/train.py .
-  * Step-07 : You can run the example with default hyperparameters as follows: [python examples/sklearn_elasticnet_wine/train.py]
-  * Step-08 : Comparing the Models: Next, use the MLflow UI to compare the models that you have produced. In the same current working directory as the one that contains the mlruns run [mlflow ui] http://localhost:5000
-
-```
-      Command Handy for you during setup the environment:
-      Install PIP Windows [python -m pip install -U pip]
-      Install PIP MAC [pip install -U pip]
-      pip install virtualenv
-      pip install scikit-learn
-      pip install mlflow
-
-      pip install -U scikit-learn scipy matplotlib
-      MACOS
-      [Installing Python]
-      Homebrew Install : /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-      brew install python@3.8
-      python -m pip3 install -U pip3
-      pip3 install scikit-learn
-
-      [Installing Conda] - [bash ~/miniconda.sh -b -p $HOME/miniconda]
-      brew install wget
-      wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
-      bash ~/miniconda.sh -b -p $HOME/miniconda
-
-```
 
 ## A. MLFlow TRACKING Server - Experiment Tracking 
 ### 1. Concept (Logging API, RUNs)
@@ -129,7 +95,7 @@
 ### 3. MLFlow Tracking Server
 ![image](https://user-images.githubusercontent.com/13011167/97169233-bc40a180-17af-11eb-9785-806d70cf4093.png)
 
-### 4.T RAINING ML MODEL WITH MLFLOW
+### 4.TRAINING ML MODEL WITH MLFLOW
 * Each run can record the following information:
   * Parameters: Key-value pairs of input parameters such as the number of trees in a random forest model.
   * Metrics: Evaluation metrics such as RMSE or Area Under the ROC Curve.
@@ -139,30 +105,26 @@
   * Version: git Version.
  
 Training the model with the different hyper-parameters and compare the results. 
-```
-   import mlflow
-   #log model's tuning parameters.
-   
-   with mlflow.start_run():
-   mlflow.log_param("layers",layers)
-   mlflow.log_param("alpha",alpha)
-   
-   #log model's metrics
-   mlflow.log_metric("mse", model.mse())
-   mlflow.log_artifact("plot",model.plot(test_df))
-   mlflow.tensorflow.log_model(model)
-   
-   #Commands
-   python3 examples/sklearn_elasticnet_wine/train.py
-   python examples/sklearn_elasticnet_wine/train.py <alpha> <l1_ratio>
-   mlflow ui
-   http://localhost:5000
-   
-```
+
 ### 5. Code - Experiment Tracking.
-![image](https://user-images.githubusercontent.com/13011167/97162043-a5e11880-17a4-11eb-91fc-1b998bc40fe5.png)
-![image](https://user-images.githubusercontent.com/13011167/97162087-b8f3e880-17a4-11eb-928d-3eb166aadadf.png)
-![image](https://user-images.githubusercontent.com/13011167/97162140-cad58b80-17a4-11eb-9255-a9b66c1921ec.png)
+#### a.Installing
+* Install MLflow from PyPI via pip install mlflow.
+* MLflow requires conda to be on the PATH for the projects feature.
+
+#### b.Running a Sample App With the Tracking API
+* The programs in examples use the MLflow Tracking API. For instance, run:
+* python examples/quickstart/mlflow_tracking.py
+* This program will use MLflow Tracking API, which logs tracking data in ./mlruns. This can then be viewed with the Tracking UI.
+
+#### c.Launching the Tracking UI
+* The MLflow Tracking UI will show runs logged in ./mlruns at http://localhost:5000. Start it with:
+* mlflow ui
+
+#### d. Running a Project from a URI
+* The mlflow run command lets you run a project packaged with a MLproject file from a local path or a Git URI:
+* mlflow run examples/sklearn_elasticnet_wine -P alpha=0.4
+* mlflow run https://github.com/mlflow/mlflow-example.git -P alpha=0.4
+* See examples/sklearn_elasticnet_wine for a sample project with an MLproject file.
 
 ## B. MLFlow PROJECTS - Packaging ML Projects
 ### 1. Concept 
@@ -234,7 +196,50 @@ Training the model with the different hyper-parameters and compare the results.
   ![image](https://user-images.githubusercontent.com/13011167/96889260-0d951c00-14a4-11eb-879f-80b91e4e3631.png)
   ![image](https://user-images.githubusercontent.com/13011167/94446051-c2019200-01c5-11eb-8bc1-42446499616f.png)
    ![image](https://user-images.githubusercontent.com/13011167/91650638-a9f00300-ea9f-11ea-8218-e68cb5de129b.png)
-  ### Important Links
+### ENVIRONMENT SETUP for MLFLOW:
+  * Step-01 : Install Python. Download the appropiate version from [https://www.python.org/downloads/windows/]. Once Downloaded, run the installer.Make sure you select the Install launcher for all users and Add Python 3.7 to PATH checkboxes. Click Install Now. Verify python is installed by typing ["python" on the command prompt].
+  * Step-02 : Install virtualnv. Why? Python software packages are installed system-wide by default. Consequently, whenever a single project-specific package is changed, it changes for all your Python projects. You would want to avoid this, and having separate virtual environments for each project is the easiest solution. [pip install virtualenv].
+  * Step-03 : Install MLFlow [pip install mlflow] . Install scikit-learn [pip install scikit-learn].
+  * Step-04 : Instal conda. [https://conda.io/projects/conda/en/latest/user-guide/install/index.html]
+  * Step-05 : Clone (download) the MLflow repository via git clone https://github.com/mlflow/mlflow .
+  * Step-06 : cd into the examples directory within your clone of MLflow - we’ll use this working directory for running the tutorial. We avoid running directly from our clone of MLflow as doing so would cause the tutorial to use MLflow from source, rather than your PyPI installation of MLflow. The code is located at examples/sklearn_elasticnet_wine/train.py .
+  * Step-07 : You can run the example with default hyperparameters as follows: [python examples/sklearn_elasticnet_wine/train.py]
+  * Step-08 : Comparing the Models: Next, use the MLflow UI to compare the models that you have produced. In the same current working directory as the one that contains the mlruns run [mlflow ui] http://localhost:5000
+
+```
+      Command Handy for you during setup the environment:
+      Install PIP Windows [python -m pip install -U pip]
+      Install PIP MAC [pip install -U pip]
+      pip install virtualenv
+      pip install scikit-learn
+      pip install mlflow
+
+      pip install -U scikit-learn scipy matplotlib
+      MACOS
+      [Installing Python]
+      Homebrew Install : /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+      brew install python@3.8
+      python -m pip3 install -U pip3
+      pip3 install scikit-learn
+
+      [Installing Conda] - [bash ~/miniconda.sh -b -p $HOME/miniconda]
+      brew install wget
+      wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
+      bash ~/miniconda.sh -b -p $HOME/miniconda
+
+```
+
+
+### Important Links
+* https://github.com/mlflow/mlflow
+* https://github.com/mlflow/mlflow/blob/master/CONTRIBUTING.rst
+* https://github.com/mlflow/mlflow/blob/master/CONTRIBUTING.rst#building-a-distributable-artifact
+* https://github.com/SQLShark/MachineLearningFromModelToProduction
+* https://medium.com/syncedreview/google-ai-chief-jeff-deans-ml-system-architecture-blueprint-a358e53c68a5
+* https://christophergs.com/machine%20learning/2019/03/17/how-to-deploy-machine-learning-models/
+* https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/standard-deployment.html
+* https://github.com/Ycallaer/mlflowdocker/blob/master/Dockerfile
+
   * What is MLflow at a high level? MLflow at a high level by MLFOW Creator (Matei Zaharia): https://databricks.com/session/accelerating-the-machine-learning-lifecycle-with-mlflow-1-0
   * What is a good source for the larger context of machine learning tools? Podcast Roaring Elephant : https://roaringelephant.org/2019/06/18/episode-145-alex-zeltov-on-mlops-with-mlflow-kubeflow-and-other-tools-part-1/#more-1958
   * Where can I find the MLflow docs? https://www.mlflow.org/docs/latest/index.html 
