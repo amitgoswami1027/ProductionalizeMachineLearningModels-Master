@@ -106,25 +106,25 @@
  
 Training the model with the different hyper-parameters and compare the results. 
 
-### 5. Code - Experiment Tracking.
-#### a.Installing
-* Install MLflow from PyPI via pip install mlflow.
-* MLflow requires conda to be on the PATH for the projects feature.
+### 5. Executing - Experiment Tracking.
+   #### a.Installing
+        * Install MLflow from PyPI via pip install mlflow.
+        * MLflow requires conda to be on the PATH for the projects feature.
 
-#### b.Running a Sample App With the Tracking API
-* The programs in examples use the MLflow Tracking API. For instance, run:
-* python examples/quickstart/mlflow_tracking.py
-* This program will use MLflow Tracking API, which logs tracking data in ./mlruns. This can then be viewed with the Tracking UI.
+   #### b.Running a Sample App With the Tracking API
+        * The programs in examples use the MLflow Tracking API. For instance, run:
+        * python examples/quickstart/mlflow_tracking.py
+        * This program will use MLflow Tracking API, which logs tracking data in ./mlruns. This can then be viewed with the Tracking UI.
 
-#### c.Launching the Tracking UI
-* The MLflow Tracking UI will show runs logged in ./mlruns at http://localhost:5000. Start it with:
-* mlflow ui
+   #### c.Launching the Tracking UI
+        * The MLflow Tracking UI will show runs logged in ./mlruns at http://localhost:5000. Start it with:
+        * mlflow ui
 
-#### d. Running a Project from a URI
-* The mlflow run command lets you run a project packaged with a MLproject file from a local path or a Git URI:
-* mlflow run examples/sklearn_elasticnet_wine -P alpha=0.4
-* mlflow run https://github.com/mlflow/mlflow-example.git -P alpha=0.4
-* See examples/sklearn_elasticnet_wine for a sample project with an MLproject file.
+   #### d. Running a Project from a URI
+        * The mlflow run command lets you run a project packaged with a MLproject file from a local path or a Git URI:
+        * mlflow run examples/sklearn_elasticnet_wine -P alpha=0.4
+        * mlflow run https://github.com/mlflow/mlflow-example.git -P alpha=0.4
+        * See examples/sklearn_elasticnet_wine for a sample project with an MLproject file.
 
 ## B. MLFlow PROJECTS - Packaging ML Projects
 ### 1. Concept 
