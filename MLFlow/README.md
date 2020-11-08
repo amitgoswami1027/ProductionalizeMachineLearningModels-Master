@@ -239,6 +239,8 @@ Training the model with the different hyper-parameters and compare the results.
 * https://christophergs.com/machine%20learning/2019/03/17/how-to-deploy-machine-learning-models/
 * https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/standard-deployment.html
 * https://github.com/Ycallaer/mlflowdocker/blob/master/Dockerfile
+* https://analyticsweek.com/content/using-mlops-with-mlflow-and-azure/
+* https://www.logicalclocks.com/blog/mlops-with-a-feature-store
 
   * What is MLflow at a high level? MLflow at a high level by MLFOW Creator (Matei Zaharia): https://databricks.com/session/accelerating-the-machine-learning-lifecycle-with-mlflow-1-0
   * What is a good source for the larger context of machine learning tools? Podcast Roaring Elephant : https://roaringelephant.org/2019/06/18/episode-145-alex-zeltov-on-mlops-with-mlflow-kubeflow-and-other-tools-part-1/#more-1958
