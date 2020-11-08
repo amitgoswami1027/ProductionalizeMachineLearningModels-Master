@@ -59,8 +59,8 @@
 * MLflow, a an open source platform from Databricks that aims to design an open ML platform where organizations can use any ML library and development tool of 
   their choice to reliably build and share ML applications. 
 * Open source: MLflow as an open source project that users and library developers can extend. In addition, MLflow’s open format makes it very easy to share 
-  workflow steps and models across organizations if you wish to open source your code.MLflow is designed to work with any ML library, algorithm, deployment tool or 
-  language.
+  workflow steps and models across organizations if you wish to open source your code. MLflow is designed to work with any ML library, algorithm, deployment tool 
+  or language.
 * MLFlow has following components:
   * MLflow Tracking : An API to log parameters, code, and results in machine learning experiments and compare them using an interactive UI.
   * MLflow Projects : Packaging ML code in a reusable, reproducible form in order to share with other data scientists or transfer to production.
