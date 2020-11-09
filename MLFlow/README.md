@@ -228,7 +228,7 @@ Training the model with the different hyper-parameters and compare the results.
       bash ~/miniconda.sh -b -p $HOME/miniconda
 
 ```
-
+* https://github.com/dmatrix/mlflow-workshop-part-1
 
 ### Important Links
 * https://github.com/mlflow/mlflow
