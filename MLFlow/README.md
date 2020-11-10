@@ -231,7 +231,7 @@ Training the model with the different hyper-parameters and compare the results.
 * https://github.com/dmatrix/mlflow-workshop-part-1
 * https://towardsdatascience.com/mlops-with-a-feature-store-816cfa5966e9
 * https://www.mosaicdatascience.com/2020/10/16/mlflow-mlops-tipsand-tricks-blog/
-
+* https://github.com/mlflow/mlflow/tree/master/examples/docker
 
 ### Important Links
 * https://github.com/mlflow/mlflow
