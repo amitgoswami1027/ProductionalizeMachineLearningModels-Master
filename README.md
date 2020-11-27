@@ -125,6 +125,13 @@ To explain why, here’s a typical life cycle of a machine learning model:
 * She probably checks in her final code to source control, but in a personal folder.
 * She publishes her results, with code and the trained weights.
 
+### ML Challanges
+* Zoo of Software Tools
+* Tracking & Reporducing Results
+* Productionizing Models
+* Scaling
+
+
 
 ## Important Links
 * https://towardsdatascience.com/rendezvous-architecture-for-data-science-in-production-79c4d48f12b
