@@ -150,4 +150,8 @@ To explain why, here’s a typical life cycle of a machine learning model:
 * https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/standard-deployment.html
 * IMPORTANT : https://www.ritchieng.com/machine-learning-systems-design/
 * END TO END PIPELINE : https://www.youtube.com/watch?v=7jKTofl2vmM
-
+Tox recreate: https://tox.readthedocs.io/en/latest/config.html#cmdoption-tox-r
+Pytest documentation:
+https://docs.pytest.org/en/latest/
+Understanding the risks of pickles:
+https://www.youtube.com/watch?v=7KnfGDajDQw
