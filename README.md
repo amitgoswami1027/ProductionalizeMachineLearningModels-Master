@@ -149,4 +149,5 @@ To explain why, here’s a typical life cycle of a machine learning model:
 * https://neptune.ai/blog/the-best-mlflow-alternatives
 * https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/standard-deployment.html
 * IMPORTANT : https://www.ritchieng.com/machine-learning-systems-design/
+* END TO END PIPELINE : https://www.youtube.com/watch?v=7jKTofl2vmM
 
