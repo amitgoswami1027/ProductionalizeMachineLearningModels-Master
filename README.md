@@ -155,3 +155,4 @@ Pytest documentation:
 https://docs.pytest.org/en/latest/
 Understanding the risks of pickles:
 https://www.youtube.com/watch?v=7KnfGDajDQw
+https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data
