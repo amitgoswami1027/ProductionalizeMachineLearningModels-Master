@@ -55,6 +55,12 @@
 # GETTING STARTED WITH MLFLOW 
 ## MLflow: A Machine Learning Lifecycle Platform
 
+### Basic Comcepts 
+* MLflow is an MLOps tool that can be used to increase the efficiency of machine learning experimentation and productionalization.
+* MLflow lets you train, reuse, and deploy models with any library and package them into reproducible steps that other data scientists can use as a “black box”, 
+  without even having to know which library you are using.
+
+
 ### MLflow designed to take care about the following :
 * MLflow, a an open source platform from Databricks that aims to design an open ML platform where organizations can use any ML library and development tool of 
   their choice to reliably build and share ML applications. 
@@ -228,6 +234,20 @@ Training the model with the different hyper-parameters and compare the results.
       bash ~/miniconda.sh -b -p $HOME/miniconda
 
 ```
+## Steps to Execute the MLFlow 
+### Training the Model
+* We train the linear regression model that takes two hyperparameters: alpha and l1_ratio.
+* The MLflow Tracking APIs log information about each training run like hyperparameters (alpha and l1_ratio) used to train the model, and metrics (root mean square 
+  error, mean absolute error, and r2) used to evaluate the model. The example also serializes the model in a format that MLflow knows how to deploy.
+* Each time you run the example MLflow logs information about your experiment runs in the directory mlruns.
+* python train.py <alpha> <l1_ratio>
+* mlflow ui
+
+### Loading a Saved Model
+*   
+
+
+
 * https://github.com/dmatrix/mlflow-workshop-part-1
 * https://towardsdatascience.com/mlops-with-a-feature-store-816cfa5966e9
 * https://www.mosaicdatascience.com/2020/10/16/mlflow-mlops-tipsand-tricks-blog/
