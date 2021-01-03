@@ -234,27 +234,82 @@ Training the model with the different hyper-parameters and compare the results.
       bash ~/miniconda.sh -b -p $HOME/miniconda
 
 ```
-## Steps to Execute the MLFlow 
-### Training the Model
-* We train the linear regression model that takes two hyperparameters: alpha and l1_ratio.
+
+# How to setup MLflow in Local
+## MlFlow Tracking Server Setup
+* Tracking server is user interface and metastore of MLFlow. All the RUNs of ML Experiments can be tracked using the MLFlow Tracking UI.
+
+### Environment Setup
+ Create a new conda environment for hosting the MLFlow. 
+ 
+ ```
+ conda create -n mlflow_env 
+ conda activate mlflow_env
+ 
+ ```
+ Then we have to install the MLflow library:
+ 
+ ```
+ conda install python 
+ pip install mlflow
+ ```
+Run the following command to check that the installation was successful:
+
+```
+mlflow --help
+```
+
+By default, the MLflow Python API logs runs locally to files in an mlruns directory wherever you ran your program. You can then run mlflow ui to see the logged runs.
+
+### RUN
+We train the linear regression model that takes two hyperparameters: alpha and l1_ratio.
 * The MLflow Tracking APIs log information about each training run like hyperparameters (alpha and l1_ratio) used to train the model, and metrics (root mean square 
   error, mean absolute error, and r2) used to evaluate the model. The example also serializes the model in a format that MLflow knows how to deploy.
 * Each time you run the example MLflow logs information about your experiment runs in the directory mlruns.
 * python train.py <alpha> <l1_ratio>
 * mlflow ui
+* By default --backend-store-uri is set to the local ./mlruns directory (the same as when running mlflow run locally), but when running a server, make sure that 
+  this points to a persistent (that is, non-ephemeral) file system location.
 
-### Loading a Saved Model
-*   
+```
+mlflow server --default-artifact-root file:/home/your_user/mlruns -h 0.0.0.0 -p 8000
+```
+Now the Tracking server should be available a the following URL: http://0.0.0.0:8000. However, if you Ctrl-C or exit the terminal, the server will go down. 
 
+* In order to start tracking everything under this Tracking Server it is necessary to set the following environmental variable on .bashrc:
+```
+export MLFLOW_TRACKING_URI='http://0.0.0.0:8000'
+. ~/.bashrc
+```
 
+### Example
+* We can easily run existing projects with the mlflow run command, which runs a project from either a local directory or a GitHub URI:
+* By default mlflow run installs all dependencies using conda.
 
-* https://github.com/dmatrix/mlflow-workshop-part-1
-* https://towardsdatascience.com/mlops-with-a-feature-store-816cfa5966e9
-* https://www.mosaicdatascience.com/2020/10/16/mlflow-mlops-tipsand-tricks-blog/
-* https://github.com/mlflow/mlflow/tree/master/examples/docker
-* https://ml-ops.org/content/mlops-principles
-* https://www.adaltas.com/en/2020/03/23/mlflow-open-source-ml-platform-tutorial/
-* https://stdiff.net/MB2019021201.html
+```
+mlflow run sklearn_elasticnet_wine -P alpha=0.5
+mlflow run https://github.com/mlflow/mlflow-example.git -P alpha=5.0
+```
+
+* This run will generate a new entry in your tracking server http://0.0.0.0:8000 alongside with a new folder in which the model and the configuration is stored 
+(~/mlruns/0/some_uuid). Let’s check it:
+
+```
+ls -al ~/mlruns/0
+```
+
+* Get the uuid related to the execution from the previous output and substitute the string “your_model_id”
+
+```
+mlflow models serve -m ~/mlruns/0/your_model_id/artifacts/model -h 0.0.0.0 -p 8001
+```
+
+* What you have just done is serving your model as an HTTP endpoint in your server IP and port 8001 (be careful not having any service listening there), so that it is ready for receiving incoming data to return predictions. You can then query your model with a simple curl command
+
+```
+curl -X POST -H "Content-Type:application/json; format=pandas-split" --data '{"columns":["alcohol", "chlorides", "citric acid", "density", "fixed acidity", "free sulfur dioxide", "pH", "residual sugar", "sulphates", "total sulfur dioxide", "volatile acidity"],"data":[[12.8, 0.029, 0.48, 0.98, 6.2, 29, 3.33, 1.2, 0.39, 75, 0.66]]}' http://0.0.0.0:8001/invocations
+```
+
 
 ### Important Links
 * https://github.com/mlflow/mlflow
@@ -269,7 +324,15 @@ Training the model with the different hyper-parameters and compare the results.
 * https://www.logicalclocks.com/blog/mlops-with-a-feature-store
 * https://towardsdatascience.com/complete-data-science-project-template-with-mlflow-for-non-dummies-d082165559eb
 * https://developer.ibm.com/technologies/data-science/articles/first-impressions-mlflow/
+* https://github.com/dmatrix/mlflow-workshop-part-1
+* https://towardsdatascience.com/mlops-with-a-feature-store-816cfa5966e9
+* https://www.mosaicdatascience.com/2020/10/16/mlflow-mlops-tipsand-tricks-blog/
+* https://github.com/mlflow/mlflow/tree/master/examples/docker
+* https://ml-ops.org/content/mlops-principles
+* https://www.adaltas.com/en/2020/03/23/mlflow-open-source-ml-platform-tutorial/
+* https://stdiff.net/MB2019021201.html
 
+* [Production] https://pedro-munoz.tech/how-to-setup-mlflow-in-production/
 
   * What is MLflow at a high level? MLflow at a high level by MLFOW Creator (Matei Zaharia): https://databricks.com/session/accelerating-the-machine-learning-lifecycle-with-mlflow-1-0
   * What is a good source for the larger context of machine learning tools? Podcast Roaring Elephant : https://roaringelephant.org/2019/06/18/episode-145-alex-zeltov-on-mlops-with-mlflow-kubeflow-and-other-tools-part-1/#more-1958
@@ -279,4 +342,5 @@ Training the model with the different hyper-parameters and compare the results.
   * https://community.cloud.databricks.com/login.html
   ### Data Bricks Setup  
   * https://www.databricks.training/step-by-step/creating-clusters-on-aws/
+  
   
