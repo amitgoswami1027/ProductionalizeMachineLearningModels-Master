@@ -289,6 +289,9 @@ export MLFLOW_TRACKING_URI='http://0.0.0.0:8000'
 ```
 mlflow run sklearn_elasticnet_wine -P alpha=0.5
 mlflow run https://github.com/mlflow/mlflow-example.git -P alpha=5.0
+
+local test → mlflow run . -P <param>
+github test →mlflow run git://<project-url> <param>
 ```
 
 * This run will generate a new entry in your tracking server http://0.0.0.0:8000 alongside with a new folder in which the model and the configuration is stored 
