@@ -1,4 +1,6 @@
 # Productization of Machine Learning Models
+ML is required in exactly those cases when the desired behavior cannot be effectively expressed in software logic without dependency on external data.
+
 How to integrate the machine learning models to production ready code. !!
 
 Deployment of machine learning models, or simply, putting models into production, means making your models available to your other business systems. By deploying models, other systems can send data to them and get their predictions, which are in turn populated back into the company systems. Through machine learning model deployment, you and your business can begin to take full advantage of the model you built.
