@@ -7,6 +7,21 @@ Deployment of machine learning models, or simply, putting models into production
 
 When we think about data science, we think about how to build machine learning models, we think about which algorithm will be more predictive, how to engineer our features and which variables to use to make the models more accurate. However, how we are going to actually use those models is often neglected. And yet this is the most important step in the machine learning pipeline. Only when a model is fully integrated with the business systems, we can extract real value from its predictions.
 
+### Machine Learning Reproduciability Crisis
+It’s hard to explain to people who haven’t worked with machine learning, but we’re still back in the dark ages when it comes to tracking changes and rebuilding models from scratch. It’s so bad it sometimes feels like stepping back in time to when we coded without source control.
+To explain why, here’s a typical life cycle of a machine learning model:
+* A researcher decides to try a new image classification architecture.
+* She copies and pastes some code from a previous project to handle the input of the dataset she’s using.
+* This dataset lives in one of her folders on the network. It’s probably one of the ImageNet downloads, but it isn’t clear which one. At some point, someone may have removed some of the images that aren’t actually JPEGs, or made other minor modifications, but there’s no history of that.
+* She tries out a lot of slightly different ideas, fixing bugs and tweaking the algorithms. These changes are happening on her local machine, and she may just do a mass file copy of the source code to her GPU cluster when she wants to kick off a full training run.
+* She executes a lot of different training runs, often changing the code on her local machine while jobs are in progress, since they take days or weeks to complete.
+* There might be a bug towards the end of the run on a large cluster that means she modifies the code in one file and copies that to all the machines, before resuming the job.
+* She may take the partially-trained weights from one run, and use them as the starting point for a new run with different code.
+* She keeps around the model weights and evaluation scores for all her runs, and picks which weights to release as the final model once she’s out of time to run more experiments. These weights can be from any of the runs, and may have been produced by very different code than what she currently has on her development machine.
+* She probably checks in her final code to source control, but in a personal folder.
+* She publishes her results, with code and the trained weights.
+* Blog for details: [ https://petewarden.com/2018/03/19/the-machine-learning-reproducibility-crisis/ ]
+
 ## Machine Learning Model Deployment
 ### Machine Learning Pipeline
 * DATA Gathering. 
@@ -89,72 +104,25 @@ Desing the data source with the timestramps, so data at any point in time can be
 * Use container for trackng the verisons.
 * Research & deployment should be done in the same language. 
 
-## PYTHON ENVIRONMENT SETUP ON MAC
-### Install Python : 
-
-
-## TRAIN BY BATCH and PREDICT ON FLY (STEPS TO AUTOMATE THE CI/CD ML PIPELINE)
-
-
-
-
-
-
-
-
-Meta Ensembling
-
-![image](https://user-images.githubusercontent.com/13011167/91420412-4df46700-e872-11ea-8501-0598139e72d8.png)
-
-
-Setup
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-https://pip.pypa.io/en/stable/installing/
-
-MYBlog Material
-https://petewarden.com/2018/03/19/the-machine-learning-reproducibility-crisis/
-https://www.confluent.io/blog/build-deploy-scalable-machine-learning-production-apache-kafka/
-It’s hard to explain to people who haven’t worked with machine learning, but we’re still back in the dark ages when it comes to tracking changes and rebuilding models from scratch. It’s so bad it sometimes feels like stepping back in time to when we coded without source control.
-To explain why, here’s a typical life cycle of a machine learning model:
-* A researcher decides to try a new image classification architecture.
-* She copies and pastes some code from a previous project to handle the input of the dataset she’s using.
-* This dataset lives in one of her folders on the network. It’s probably one of the ImageNet downloads, but it isn’t clear which one. At some point, someone may have removed some of the images that aren’t actually JPEGs, or made other minor modifications, but there’s no history of that.
-* She tries out a lot of slightly different ideas, fixing bugs and tweaking the algorithms. These changes are happening on her local machine, and she may just do a mass file copy of the source code to her GPU cluster when she wants to kick off a full training run.
-* She executes a lot of different training runs, often changing the code on her local machine while jobs are in progress, since they take days or weeks to complete.
-* There might be a bug towards the end of the run on a large cluster that means she modifies the code in one file and copies that to all the machines, before resuming the job.
-* She may take the partially-trained weights from one run, and use them as the starting point for a new run with different code.
-* She keeps around the model weights and evaluation scores for all her runs, and picks which weights to release as the final model once she’s out of time to run more experiments. These weights can be from any of the runs, and may have been produced by very different code than what she currently has on her development machine.
-* She probably checks in her final code to source control, but in a personal folder.
-* She publishes her results, with code and the trained weights.
-
-### ML Challanges
-* Zoo of Software Tools
-* Tracking & Reporducing Results
-* Productionizing Models
-* Scaling
-
-
 
 ## Important Links
-* https://towardsdatascience.com/rendezvous-architecture-for-data-science-in-production-79c4d48f12b
-* Randomness: https://www.kdnuggets.com/2017/06/surprising-complexity-randomness.html
-* Embrace Randomness in Machine Learning : https://machinelearningmastery.com/randomness-in-machine-learning/
-* Apache Kafka to Drive Machine Learning https://www.confluent.io/blog/using-apache-kafka-drive-cutting-edge-machine-learning/
-* Streaming Examples : https://github.com/kaiwaehner/kafka-streams-machine-learning-examples
-* Deep Learning Spark: https://towardsdatascience.com/deep-learning-with-apache-spark-part-1-6d397c16abd
-* MLFLOW : https://github.com/mlflow/mlflow
-* https://github.com/ddotabma/rendezvous-on-aws
-* https://github.com/SQLShark/MachineLearningFromModelToProduction
-* https://medium.com/syncedreview/google-ai-chief-jeff-deans-ml-system-architecture-blueprint-a358e53c68a5
-* https://christophergs.com/machine%20learning/2019/03/17/how-to-deploy-machine-learning-models/
-* RENDEZVOUS ARCHITECTURE:https://www.bigdatarepublic.nl/articles/machine-learning-models-aws-rendezvous-architecture/
-* https://neptune.ai/blog/the-best-mlflow-alternatives
-* https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/standard-deployment.html
-* IMPORTANT : https://www.ritchieng.com/machine-learning-systems-design/
-* END TO END PIPELINE : https://www.youtube.com/watch?v=7jKTofl2vmM
-Tox recreate: https://tox.readthedocs.io/en/latest/config.html#cmdoption-tox-r
-Pytest documentation:
-https://docs.pytest.org/en/latest/
-Understanding the risks of pickles:
-https://www.youtube.com/watch?v=7KnfGDajDQw
-https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data
+* [How to Deploy Machine Learning Models] https://christophergs.com/machine%20learning/2019/03/17/how-to-deploy-machine-learning-models/
+* [Talk on ML Deployment] https://www.youtube.com/watch?v=7jKTofl2vmM
+
+* [Surprising Complexity of Randomness] https://www.kdnuggets.com/2017/06/surprising-complexity-randomness.html
+
+* [Acure ML MachineLearning From Model To Production] https://github.com/SQLShark/MachineLearningFromModelToProduction
+
+* [Build and DeployM ML with Apache Kafka] https://www.confluent.io/blog/build-deploy-scalable-machine-learning-production-apache-kafka/
+* [Apache Kafka to Drive Machine Learning] https://www.confluent.io/blog/using-apache-kafka-drive-cutting-edge-machine-learning/
+* [Streaming Kafka Example] https://github.com/kaiwaehner/kafka-streams-machine-learning-examples
+* [Deep Learning with Apache Spark] https://towardsdatascience.com/deep-learning-with-apache-spark-part-1-6d397c16abd
+
+* [Rendezvous Architecture for Data Science in Production-01]:https://towardsdatascience.com/rendezvous-architecture-for-data-science-in-production-79c4d48f12b
+* [Rendezvous Architecture for Data Science in Production-02]https://www.bigdatarepublic.nl/articles/machine-learning-models-aws-rendezvous-architecture/
+* [rendezvous Architecture Code] https://github.com/ddotabma/rendezvous-on-aws
+* [AWS Deployments - Blue/green/Canery etc] https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/standard-deployment.html
+
+* [Machine Learning Basic & Details - Imp]: https://www.ritchieng.com/machine-learning-systems-design/
+* [Best MLflow Alternatives] https://neptune.ai/blog/the-best-mlflow-alternatives
+* [Tools] https://tox.readthedocs.io/en/latest/config.html#cmdoption-tox-r ; https://docs.pytest.org/en/latest/
