@@ -315,35 +315,18 @@ curl -X POST -H "Content-Type:application/json; format=pandas-split" --data '{"c
 
 
 ### Important Links
+* https://ml-ops.org/content/mlops-principles
+* https://developer.ibm.com/technologies/data-science/articles/first-impressions-mlflow/
+* https://towardsdatascience.com/complete-data-science-project-template-with-mlflow-for-non-dummies-d082165559eb
 * https://github.com/mlflow/mlflow
 * https://github.com/mlflow/mlflow/blob/master/CONTRIBUTING.rst
-* https://github.com/mlflow/mlflow/blob/master/CONTRIBUTING.rst#building-a-distributable-artifact
-* https://github.com/SQLShark/MachineLearningFromModelToProduction
-* https://medium.com/syncedreview/google-ai-chief-jeff-deans-ml-system-architecture-blueprint-a358e53c68a5
-* https://christophergs.com/machine%20learning/2019/03/17/how-to-deploy-machine-learning-models/
-* https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/standard-deployment.html
 * https://github.com/Ycallaer/mlflowdocker/blob/master/Dockerfile
 * https://analyticsweek.com/content/using-mlops-with-mlflow-and-azure/
 * https://www.logicalclocks.com/blog/mlops-with-a-feature-store
-* https://towardsdatascience.com/complete-data-science-project-template-with-mlflow-for-non-dummies-d082165559eb
-* https://developer.ibm.com/technologies/data-science/articles/first-impressions-mlflow/
-* https://github.com/dmatrix/mlflow-workshop-part-1
-* https://towardsdatascience.com/mlops-with-a-feature-store-816cfa5966e9
 * https://www.mosaicdatascience.com/2020/10/16/mlflow-mlops-tipsand-tricks-blog/
-* https://github.com/mlflow/mlflow/tree/master/examples/docker
-* https://ml-ops.org/content/mlops-principles
-* https://www.adaltas.com/en/2020/03/23/mlflow-open-source-ml-platform-tutorial/
-* https://stdiff.net/MB2019021201.html
-
 * [Production] https://pedro-munoz.tech/how-to-setup-mlflow-in-production/
-
-  * What is MLflow at a high level? MLflow at a high level by MLFOW Creator (Matei Zaharia): https://databricks.com/session/accelerating-the-machine-learning-lifecycle-with-mlflow-1-0
-  * What is a good source for the larger context of machine learning tools? Podcast Roaring Elephant : https://roaringelephant.org/2019/06/18/episode-145-alex-zeltov-on-mlops-with-mlflow-kubeflow-and-other-tools-part-1/#more-1958
-  * Where can I find the MLflow docs? https://www.mlflow.org/docs/latest/index.html 
-  * Getting started with mlFlow : https://towardsdatascience.com/getting-started-with-mlflow-52eff8c09c61
-  * Productizing Machine Learning Models: https://blog.sasken.com/productizing-machine-learning-models-an-introduction#:~:text=The%20typical%20machine%20learning%20
-  * https://community.cloud.databricks.com/login.html
-  ### Data Bricks Setup  
-  * https://www.databricks.training/step-by-step/creating-clusters-on-aws/
-  * MLFLOW on AWS : https://allcloud.io/blog/organise-your-ml-experiments-with-mlflow-on-aws/
+* Getting started with mlFlow : https://towardsdatascience.com/getting-started-with-mlflow-52eff8c09c61
+* What is MLflow at a high level? MLflow at a high level by MLFOW Creator (Matei Zaharia): https://databricks.com/session/accelerating-the-machine-learning-lifecycle-with-mlflow-1-0
+* https://www.databricks.training/step-by-step/creating-clusters-on-aws/
+* MLFLOW on AWS : https://allcloud.io/blog/organise-your-ml-experiments-with-mlflow-on-aws/
   
