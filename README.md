@@ -121,3 +121,4 @@ Desing the data source with the timestramps, so data at any point in time can be
 * [Tools] https://tox.readthedocs.io/en/latest/config.html#cmdoption-tox-r ; https://docs.pytest.org/en/latest/
 * [Deep Learning with Apache Spark] https://towardsdatascience.com/deep-learning-with-apache-spark-part-1-6d397c16abd
 * [rendezvous Architecture Code]https://github.com/ddotabma/rendezvous-on-aws
+* BUILDING VS BUY : https://algorithmia.com/blog/machine-learning-framework
