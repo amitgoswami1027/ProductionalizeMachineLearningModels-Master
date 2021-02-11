@@ -1,4 +1,4 @@
-# Productization of Machine Learning Models
+# Operationalize/Productization of Machine Learning Models
 ML is required in exactly those cases when the desired behavior cannot be effectively expressed in software logic without dependency on external data.
 
 How to integrate the machine learning models to production ready code. !!
@@ -106,6 +106,8 @@ Desing the data source with the timestramps, so data at any point in time can be
 
 
 ## Important Links
+* [MartinFowler]: https://martinfowler.com/articles/cd4ml.html#ml-pipeline-1.png
+* [MartinFowler]: https://martinfowler.com/articles/data-monolith-to-mesh.html
 * [How to Deploy Machine Learning Models] https://christophergs.com/machine%20learning/2019/03/17/how-to-deploy-machine-learning-models/
 * [Talk on ML Deployment] https://www.youtube.com/watch?v=7jKTofl2vmM
 * [Surprising Complexity of Randomness] https://www.kdnuggets.com/2017/06/surprising-complexity-randomness.html
