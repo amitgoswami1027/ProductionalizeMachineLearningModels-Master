@@ -109,18 +109,18 @@ Desing the data source with the timestramps, so data at any point in time can be
 * [MartinFowler] https://martinfowler.com/articles/cd4ml.html#ml-pipeline-1.png
 * [MartinFowler] https://martinfowler.com/articles/data-monolith-to-mesh.html
 * [How to Deploy Machine Learning Models] https://christophergs.com/machine%20learning/2019/03/17/how-to-deploy-machine-learning-models/
+* [Rendezvous Architecture for Data Science in Production-01] https://towardsdatascience.com/rendezvous-architecture-for-data-science-in-production-79c4d48f12b
+* [Rendezvous Architecture for Data Science in Production- AWS] https://www.bigdatarepublic.nl/articles/machine-learning-models-aws-rendezvous-architecture/
+* [Rrendezvous Architecture Code] https://github.com/ddotabma/rendezvous-on-aws
+* [AWS Deployments - Blue/green/Canery etc] https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/standard-deployment.html
 * [Talk on ML Deployment] https://www.youtube.com/watch?v=7jKTofl2vmM
 * [Surprising Complexity of Randomness] https://www.kdnuggets.com/2017/06/surprising-complexity-randomness.html
-* [Acure ML MachineLearning From Model To Production] https://github.com/SQLShark/MachineLearningFromModelToProduction
+* [Azure ML MachineLearning From Model To Production] https://github.com/SQLShark/MachineLearningFromModelToProduction
 * [Build and DeployM ML with Apache Kafka] https://www.confluent.io/blog/build-deploy-scalable-machine-learning-production-apache-kafka/
 * [Apache Kafka to Drive Machine Learning] https://www.confluent.io/blog/using-apache-kafka-drive-cutting-edge-machine-learning/
 * [Streaming Kafka Example] https://github.com/kaiwaehner/kafka-streams-machine-learning-examples
-* [AWS Deployments - Blue/green/Canery etc] https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/standard-deployment.html
-* [Rendezvous Architecture for Data Science in Production-01] https://towardsdatascience.com/rendezvous-architecture-for-data-science-in-production-79c4d48f12b
-* [Rendezvous Architecture for Data Science in Production-02] https://www.bigdatarepublic.nl/articles/machine-learning-models-aws-rendezvous-architecture/
 * [Machine Learning Basic & Details - Imp] https://www.ritchieng.com/machine-learning-systems-design/
 * [Best MLflow Alternatives] https://neptune.ai/blog/the-best-mlflow-alternatives
 * [Tools] https://tox.readthedocs.io/en/latest/config.html#cmdoption-tox-r ; https://docs.pytest.org/en/latest/
 * [Deep Learning with Apache Spark] https://towardsdatascience.com/deep-learning-with-apache-spark-part-1-6d397c16abd
-* [rendezvous Architecture Code] https://github.com/ddotabma/rendezvous-on-aws
 * BUILDING VS BUY : https://algorithmia.com/blog/machine-learning-framework
