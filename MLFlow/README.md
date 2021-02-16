@@ -329,4 +329,6 @@ curl -X POST -H "Content-Type:application/json; format=pandas-split" --data '{"c
 * What is MLflow at a high level? MLflow at a high level by MLFOW Creator (Matei Zaharia): https://databricks.com/session/accelerating-the-machine-learning-lifecycle-with-mlflow-1-0
 * https://www.databricks.training/step-by-step/creating-clusters-on-aws/
 * MLFLOW on AWS : https://allcloud.io/blog/organise-your-ml-experiments-with-mlflow-on-aws/
+* [MLOPS-1] https://cloud.google.com/solutions/machine-learning/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning
+* [MLOPS-2] https://d1.awsstatic.com/whitepapers/mlops-continuous-delivery-machine-learning-on-aws.pdf?did=wp_card&trk=wp_card
   
