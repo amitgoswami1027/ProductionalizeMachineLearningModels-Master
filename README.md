@@ -109,6 +109,7 @@ Desing the data source with the timestramps, so data at any point in time can be
 * [MartinFowler] https://martinfowler.com/articles/cd4ml.html#ml-pipeline-1.png
 * [MartinFowler] https://martinfowler.com/articles/data-monolith-to-mesh.html
 * [How to Deploy Machine Learning Models] https://christophergs.com/machine%20learning/2019/03/17/how-to-deploy-machine-learning-models/
+* [Shadow Mode]https://christophergs.com/machine%20learning/2019/03/30/deploying-machine-learning-applications-in-shadow-mode/
 * [Rendezvous Architecture for Data Science in Production-01] https://towardsdatascience.com/rendezvous-architecture-for-data-science-in-production-79c4d48f12b
 * [Rendezvous Architecture for Data Science in Production- AWS] https://www.bigdatarepublic.nl/articles/machine-learning-models-aws-rendezvous-architecture/
 * [Rrendezvous Architecture Code] https://github.com/ddotabma/rendezvous-on-aws
